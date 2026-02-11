@@ -1,0 +1,22 @@
+# Core
+python-dotenv
+pydantic
+pydantic-settings
+
+# API
+fastapi
+uvicorn
+httpx
+
+# PDF
+pymupdf
+pdfplumber
+
+# AI
+langchain
+langchain-openai
+openai
+tiktoken
+
+# Utils
+numpy
