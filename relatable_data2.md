@@ -1,0 +1,1792 @@
+## TECHNICAL PROPOSAL
+## Team Leader cum Senior Highway Engineer
+Independent Engineer Services for Construction of new four-lane Access controlled Highway from Cuttack (end point of CRRR at NH-
+16 near Tangi) to Kandarpur on SH-12 from Design Ch. 0+000 km to 21+225 under NH(O) on Hybrid Annuity Mode in the state of
+Odisha.
+## Proposed Position
+## : ## Team Leader cum Senior Highway Engineer
+## Name of Firm
+## : ## Name of Staff
+## : ## Durgesh Kumar
+## Profession
+## : Civil Engineering
+## Date of Birth: ## : 1st January 1964
+## Years with Firm/Entity
+## : Available for this assignment
+## Nationality: Indian
+## Membership of Professional
+## Societies
+## : Nil
+## Detailed Task Assigned
+## : As mentioned in APPENDIX B-6 of the Proposal
+## Certification by the Candidate
+## Jharkhand - 827001) undertake that this CV correctly describes myself, my qualifications and my experience and National
+## Highways Authority of India would be at liberty to debar me if any information given in the CV, in particular the Summary of
+Qualification & Experience vis-à-vis the requirements as per TOR is found incorrect. I further undertake that I have neither
+been debarred by National Highways Authority of India nor left any assignment with the consultants engaged by National
+Highways Authority of India / contracting firm (firm to be supervised now) for any continuing work of National Highways
+## Authority of India without completing my assignment. I will be available for the entire duration of the current project
+## (Independent Engineer Services for Construction of new four-lane Access controlled Highway from Cuttack (end
+## point of CRRR at NH-16 near Tangi) to Kandarpur on SH-12 from Design Ch. 0+000 km to 21+225 under NH(O) on
+## Hybrid Annuity Mode in the state of Odisha.). If I leave this assignment in the middle of the work, National Highways
+## Authority of India would be at liberty to debar me from taking any assignment in any of the National Highways Authority of
+India works for an appropriate period of time to be decided by National Highways Authority of India. I have no objection if
+my services are extended by National Highways Authority of India for this work in future.
+further undertake that if due to my inability to work on this project due to unavoidable circumstances, due to which
+consultant’s firm is forced to seek replacement. In such unavoidable circumstances, I shall not undertake any employment in
+## National Highways Authority of India projects during the period of assignment of this project and National Highways
+## Authority of India shall consider my CV invalid till such time.
+## For Key Personnel having intermittent inputs, add the following:
+I further certify that I am associated with the following assignments as on date (as on 7 days prior to due date for submission
+of proposal) including those for which LOA has been received by the firm and the inputs in these assignments shall not effect
+the work of the current assignment.
+## Name of Assignment
+## Client
+## Date of LOA
+## Likely start
+## (Month / Year)
+## Likely end (Month / Year)
+## Total input
+## of the
+## person (man
+## months)
+##
+##
+## Date: ## 11/11/2025
+## [Signature of Key Personnel)
+## Day/Month/
+## Year
+The Consultant should carryout self-evaluation based on the evaluation criteria at Appendix-EC and furnish the same here.
+While submitting the self-evaluation along with bid, Consultant shall make references to the documents which have been
+relied upon in his self-evaluation
+## Certification by the firm: ##
+has neither been debarred by National Highways Authority of India nor left his assignment with any other consulting firm
+projects. We understand that if the information about leaving the past assignment is known to National Highways Authority
+## of India, National Highways Authority of India would be at liberty to remove the personnel from the present assignment
+and debar him for an appropriate period to be decided by National Highways Authority of India.
+##
+##
+##
+##
+##
+##
+##
+## Date: ## 11/11/2025
+## [Signature of authorized representative of the Firm]
+## Day/Month/
+## Year
+## Profile
+## Key Personnel:-Durgesh Kumar
+## EKYC and PAN Validation Done on (27/06/2025)
+## Before EKYC Data
+## Name
+## DOB
+## OLD PAN
+AIVPK4439N
+## Verification Remarks
+KP is available for bidding with Remarks as "Verification Under Process"
+##  DETAILS
+## Registration Date: 27/06/2025
+## Last Modified Basic Details on: 29/06/2025
+## Last Accepted Details on: 02/07/2025
+## Current Status
+Active
+## Type
+Experienced
+## BASIC DETAILS
+## Aadhar Number
+## Aadhar Verified on   Jun 27 2025 10:29PM
+## Photo
+## Name
+Durgesh Kumar
+## DOB
+01/01/1964
+## Mother Name
+Late Chandraful Devi
+## Father Name
+S/O: Yugal Singh
+## Email
+durgeshtl2014gmail.com
+## Country
+India
+## Current State
+JHARKHAND
+## Current District
+BOKARO
+## Current Address
+Qr no 1166 ,Sector 1/C , ,Bokaro Steel City
+## Current Pin Code / Zip Code
+827001
+## Permanent State
+JHARKHAND
+## Permanent District
+BOKARO
+## Permanent Address
+Qr no 1166 ,Sector 1/C , ,Bokaro Steel City
+## Permanent Pin Code / Zip Code
+827001
+## PAN Number
+AIVPK4439N       ||
+## Passport Number
+Not Uploaded ||
+## Mobile
+9431378392
+## Alternate Mobile
+8709704009
+## Landline Number
+## UAN Number
+## ID Proof
+||
+## Knowledge of Modern Computer Based Method of Surveying
+No
+## QUALIFICATION DETAILS
+## Level
+## Qualification Level
+## Topic of the
+## Subject/Specialization
+## College
+## University/Board
+## Year Of
+## Passing
+## Percentage
+## Enrollment
+## Number
+## Certificate
+## Details
+## Certificate
+## Uploaded
+## Supporting
+## Documents
+Graduate/Degree
+BE/B.Tech /B.Sc.
+(Engineering)/ AMIE in CIVIL
+Engineering or equivalent
+Civil Engineering
+Magadh
+Engineering
+College Gaya
+Magadh University
+1990
+82.03
+Gay72
+--
+View
+Post Graduate
+M.Tech/ ME in Environmental
+Engineering or equivalent
+Environmental Engineering
+& Science
+Indian School of
+MInes
+Indian School of Mines
+Dhanbad
+2002
+62.8
+612611
+--
+View
+## COMPANIES DETAILS
+## Sno
+## Company Name
+## From Year
+## To Year
+## Uploaded Document
+##
+1
+M/s BSBK Private Ltd
+20/08/1990
+30/01/1998
+View
+2
+Backbone Enterprises Limited
+01/02/1998
+30/06/2000
+View
+11/11/2025, 16:34
+1/2
+3
+M/s BSBK Private Ltd
+01/04/2002
+30/10/2004
+View
+4
+M/s Nagarjuna Construction Company Ltd
+06/11/2004
+04/05/2006
+View
+5
+M/s Madhucon Projects Ltd
+08/05/2006
+30/06/2007
+View
+6
+Wilbur Smith Associates Inc USA
+01/07/2007
+30/05/2008
+View
+7
+Span Consultants Pvt Ltd Bangalore
+01/06/2008
+15/07/2009
+View
+8
+M/s Rodic Consultant Private Limited
+21/07/2009
+28/04/2011
+View
+9
+M/s Varah Infra Ltd.
+02/05/2011
+21/03/2014
+View
+10
+Antea India Pvt Ltd. Formerly M/s Unihorn India Pvt. Ltd
+07/04/2014
+25/10/2017
+View
+11
+M/s Indian Technocrat Ltd
+23/04/2018
+21/03/2020
+View
+12
+M/s L N Malviya Infra Projects Pvt. Ltd.
+24/03/2020
+View
+## DETAILED WORK DETAILS
+## Sno
+## Work Name
+## Client
+## Company Name
+## Designation
+## Project
+## Cost (Cr)
+## Start Date
+## Completion
+## Date
+## Country
+## Details
+## Supporting
+## Documents
+1
+Construction and Maintenance of various Roads including 2 and 4 lanes of
+Bokaro Steel City
+Bokaro Steel Plant
+(Steel Authority of
+India)
+M/s BSBK Private
+Ltd
+Site Engineer
+86.00
+20/08/1990
+30/12/1994
+India
+View
+View
+2
+Construction and Maintenance of various Roads including 2 and 4 lanes of
+Bokaro Steel City
+Bokaro Steel Plant
+(Steel Authority of
+India)
+M/s BSBK Private
+Ltd
+Deputy Project
+Manager
+140.00
+01/01/1995
+30/01/1998
+India
+View
+View
+3
+Widening and Strengthening of 2 lane State highway Bharuch Dahej Road
+on the section of SH-6 Km 225/00 to 262/00 in the state of Gujarat. Total
+Length-37 Km, EPC Mode
+Govt. of Gujarat
+Backbone
+Enterprises
+Limited
+Project Manager
+98.00
+01/02/1998
+30/04/1999
+India
+View
+View
+4
+Construction for Development of 2/4-Laning Maliya to Pipaliya junction
+from Morbi bypass Navlakhi road section on NH-6 of State highway 24
+(Pkg-2) in the State of Gujarat. Total Length-65 Km, EPC Mode.
+Govt. of Gujarat
+Backbone
+Enterprises
+Limited
+Project Manager
+120.00
+01/05/1999
+30/06/2000
+India
+View
+View
+5
+Construction of 2/4 Laning from Neelmangala - Tumkur on the Section of
+NH-4, from Km 29.5 to Km 62 (Nelamangala - Tumkur Section) near
+Bangalore in Karnataka on BOT Basis. PPP; (Project Cost: INR 210
+Crores). Length: 32.5 KM.
+National Highways
+Authority of India
+M/s BSBK Private
+Ltd
+Project Manager
+210.00
+01/04/2002
+30/10/2004
+India
+View
+View
+6
+Four laning of Bangalore Maddur State Highway SH-17: Design and
+Construction of Road from Km 11.60 to 82.50 excluding ch. from 45.40
+Km to 51.20 Km (Ramnagara Town Limits) and from 59.60 Km to 62.10
+Km (Channapatna Town Limits) of Bangalore - Mysore State Highway (SH-
+17) (Project Cost: INR 160 Crores, Length-62.6 Km)
+Karnataka Road
+Development
+Corporation Limited
+(KRDCL)
+M/s Nagarjuna
+Construction
+Company Ltd
+Project Manager
+160.00
+06/11/2004
+04/05/2006
+India
+View
+View
+7
+Improvement, Operation and Maintenance of Rehabilitation and
+Strengthening of Existing 2-Lane Road and Widening to 4-Lane Divided
+Carriageway of Km 63.000 to Km 120.000 of NH-11 (Bharatpur-Mahua
+Section) in the State of Rajasthan on Build, Operate and Transfer (BOT)
+Basis under NHDP Phase-III A. (Project Cost: INR 230 Crores, Length: 57
+Km)
+National Highways
+Authority of India
+M/s Madhucon
+Projects Ltd
+Project Manager
+230.00
+08/05/2006
+30/06/2007
+India
+View
+View
+8
+Feasibility Study and Detailed Project Report for 4/6-Laning of Kuttipuram
+- Edapally Junction of NH-17 in theState of Kerala under NHDP Phase III
+Programme (Package No. NHDP-III/DL4/03. Length: 120.6 Km. Cost:INR
+500 Crores.
+National Highways
+Authority of India
+Wilbur Smith
+Associates Inc
+USA
+Team Leader
+cum Highway
+Engineer
+500.00
+01/07/2007
+30/05/2008
+India
+View
+View
+9
+Preparation of Detailed Project Report for 4-laning of NH-47 Salem to
+Coimbatore section in the state of TamilNadu. (Length: 100 Km; Project
+Cost: INR 820 Crores).
+National Highways
+Authority of India
+Span Consultants
+Pvt Ltd Bangalore
+Team Leader
+cum Highway
+Engineer
+820.00
+01/06/2008
+15/07/2009
+India
+View
+View
+10
+Consultancy Services for Preparation of Detailed Project Report for 4-
+laning Divided Carriageway from Mahulia-Baharagora section of NH-33
+from Km 277.500 to Km 333.500 (length-56 Km) & Baharagora-Chichra
+section of NH-6 from Km 199.200 to Km 183.587 (Length-15.613 Km) in
+the State of Jharkhand through PPP, Length: 71.61 Km INR 731 Cr.
+National Highways
+Authority of India
+M/s Rodic
+Consultant
+Private Limited
+Team Leader
+cum Highway
+Engineer
+731.00
+21/07/2009
+31/05/2010
+India
+View
+View
+11
+Preparation of Detailed Project Report for 2/4-laning with paved shoulders
+from Govindpur (Rajganj)-West Bengal Border section of NH-32 from Km
+0 to Km 70.56 (Revised Km 56.889) INR 315 Cr & ITI More-Chas Ramgarh
+Section of NH-23 section from Km 0 to Km 80.5 (Revised Km 78.315) in
+the State of Jharkhand. Length-151 Km; Cost: INR 613 Cr
+National Highways
+Authority of India
+M/s Rodic
+Consultant
+Private Limited
+Team Leader
+cum Highway
+Engineer
+613.00
+01/06/2010
+28/04/2011
+India
+View
+View
+12
+Development of 4-laning of Rohtak - Bawal Section of NH-71 from km
+363.300 (design km 363.300) to km 450.800 (design km 445.853) in the
+State of Haryana on DBFOT Basis under NHDP-Phase-III) (Project Cost:
+INR 650 Crores, Length-82.553 Km)
+M/s Kurukshetra
+Expressway Pvt. Ltd.
+Ultimate Client: National Highways
+Authority of India
+M/s Varah Infra
+Ltd.
+Project Manager
+650.00
+02/05/2011
+21/03/2014
+India
+View
+View
+13
+Consultancy Services as Independent Engineer during Operation &
+Maintenance of 4-Lane Divided Carriageway Facility Constructed on BOT
+(Annuity) of Panagarh - Palsit - Dankuni Section from km 517.000
+(design km 520.103) to km 645.600 (design km 649.072) of NH-2 in the
+State of West Bengal (Project Cost: INR 1019.75 Crores, Length-128.969
+Km)
+National Highways
+Authority of India
+Antea India Pvt
+Ltd. Formerly M/s
+Unihorn India
+Pvt. Ltd
+Resident
+Engineer cum
+Acting Team
+Leader
+1,019.75
+07/04/2014
+25/10/2017
+India
+View
+View
+14
+Construction Supervision Consultancy Services for Improvement and Up-
+gradation to 2 Lane (SH 2) with Earthen Shoulder of Patratu-Hendegir-
+Macluskiganj Road including Construction of Culverts & Bridges (Project
+Cost: INR 151.48 Crores, Length-45.081 Km).
+State Highways
+Authority of
+Jharkhand
+M/s Indian
+Technocrat Ltd
+Team Leader
+cum Sr. Highway
+Engineer
+151.48
+23/04/2018
+21/03/2020
+India
+View
+View
+15
+Consultancy Services for Authority's Engineer for Rehabilitation and
+Upgradation of Existing Road of 2-lane with Paved Shoulders Configuration
+in Purulia (Jhr Border) - Chandil (Junction with NH-33) Section of NH-32
+[from Km 70.524 (Jhr/WB Border) to Km 84.400 (near Sainik School,
+Purulia) and from Km 94.300 (near Simulia Junction, Purulia) to Km
+153.705 (near Chandil, Junction with NH-33 in the State of Jharkjand)] in
+the States of West Bengal and Jharkhand under NHDP Phase-IVB on EPC
+Mode
+National Highways
+Authority of India
+M/s L N Malviya
+Infra Projects
+Pvt. Ltd.
+Team Leader
+cum Sr. Highway
+Engineer
+708.30
+24/03/2020
+India
+View
+View
+11/11/2025, 16:34
+2/2
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+44.5 KM
+3.5 KM
+0 KM
+## Lane Tpye    Flexi
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        44.5 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        3.5 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Construction and Maintenance of various Roads including 2 and 4 lanes of Bokaro Steel City
+## Country
+India
+## State
+JHARKHAND
+## Employer Name
+M/s BSBK Private Ltd
+## Employer Address
+808/809e, International Trade Tower , Nehru Place New Delhi
+## Client
+Bokaro Steel Plant (Steel Authority of India)
+## Client Address
+ADM Building, Bokaro Steel City, Jharkhand 827004
+## Client Contact Details
+## Start Date
+20/08/1990
+## Completion Date: 30/12/1994
+## Project Cost
+86.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Site Engineer
+## Description of Duties
+Road Construction and Maintenance work. Road work including earthwork, GSB, WMM, DBM, quality control and quality assurance of the projects, supervision of routine as well as periodic
+maintenance activities, operation of field laboratory as per specification, institute quality assurance system, conduct specified tests as per stipulations and specifications laid down in the project
+contract, assess and check tests, order special test of materials where required, check and certify bills for payment. Maintenance work include quality control and quality assurance of the projects,
+supervision of routine as well as periodic maintenance activities, operation of field laboratory as per specification, institute quality assurance system, conduct specified tests as per stipulations and
+specifications laid down in the project contract, assess and check tests, order special test of materials where required, check and certify bills for payments.
+## Nature of Assignment
+Execution
+## National Highway No.
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/08/1990
+30/12/1994
+11/11/2025, 16:40
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+56 KM
+7 KM
+0 KM
+## Lane Tpye    Flexi
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        56 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        7 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Construction and Maintenance of various Roads including 2 and 4 lanes of Bokaro Steel City
+## Country
+India
+## State
+JHARKHAND
+## Employer Name
+M/s BSBK Private Ltd
+## Employer Address
+808/809e, International Trade Tower , Nehru Place New Delhi
+## Client
+Bokaro Steel Plant (Steel Authority of India)
+## Client Address
+ADM Building, Bokaro Steel City, Jharkhand 827004
+## Client Contact Details
+## Start Date
+01/01/1995
+## Completion Date: 30/01/1998
+## Project Cost
+140.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Deputy Project Manager
+## Description of Duties
+Road Construction and Maintenance work. Road work including earthwork, GSB, WMM, DBM, quality control and quality assurance of the projects, supervision of routine as well as periodic
+maintenance activities, operation of field laboratory as per specification, evolve and institute quality assurance system, conduct specified tests as per stipulations and specifications laid down in the
+project contract, assess and check tests, order special test of materials where required, check and certify bills for payment. Maintenance work include quality control and quality assurance of the
+projects, supervision of routine as well as periodic maintenance activities, operation of field laboratory as per specification, evolve and institute quality assurance system, conduct specified tests as
+per stipulations and specifications laid down in the project contract, assess and check tests, order special test of materials where required, check and certify bills for payments; active coordination
+with juniors
+## Nature of Assignment
+Execution
+## National Highway No.
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/01/1995
+30/01/1998
+11/11/2025, 16:40
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+37 KM
+0 KM
+0 KM
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        37 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Widening and Strengthening of 2 lane State highway Bharuch Dahej Road on the section of SH-6 Km 225/00 to 262/00 in the state of Gujarat. Total Length-37 Km, EPC Mode
+## Country
+India
+## State
+GUJARAT
+## Employer Name
+Backbone Enterprises Limited
+## Employer Address
+209, Akik Tower, Opposite Rajpath Club, S.G. Highway, Bodakdev, Ahmedabad, Gujarat 380015
+## Client
+Govt. of Gujarat
+## Client Address
+BLOCK-14, 2ND FLOOR, NEW SACHIVALAYA, GANDHINAGAR
+## Client Contact Details
+## Start Date
+01/02/1998
+## Completion Date: 30/04/1999
+## Project Cost
+98.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Project Manager
+## Description of Duties
+• Overall responsible for project management, execution, quality control besides constant watch on the sources of supply of material, co-ordination with other staff members. • Project
+management, monitoring of progress, deployment of resources, guiding staff, review of works program, project monitoring for cost control and Quality Control. • Supervision of lying of horizontal
+and vertical curves as per specifications. • Supervision of fixing of super elevation at curves • Supervision of highway construction like earth work GSB, WMM and BC to ensure specification
+compliance • Monitoring deployment of resources and manpower as per the work program to obviate time and cost over run • Evolve work program, method statement for carrying out the
+works to the technical requirements. • Inspection of construction equipment and machinery, ensuring safety of work, property and general public. • Examine and attend to the measurement of
+the completed works in the prescribed format • Check the inter
+## Nature of Assignment
+Execution
+## National Highway No.
+## State Highway No.
+6
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/02/1998
+30/04/1999
+11/11/2025, 16:40
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+65 KM
+0 KM
+0 KM
+## Lane Tpye    Flexi
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        65 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Construction for Development of 2/4-Laning Maliya to Pipaliya junction from Morbi bypass Navlakhi road section on NH-6 of State highway 24 (Pkg-2) in the State of Gujarat. Total Length-65 Km,
+EPC Mode.
+## Country
+India
+## State
+GUJARAT
+## Employer Name
+Backbone Enterprises Limited
+## Employer Address
+209, Akik Tower, Opposite Rajpath Club, S.G. Highway, Bodakdev, Ahmedabad, Gujarat 380015
+## Client
+Govt. of Gujarat
+## Client Address
+BLOCK-14, 2ND FLOOR, NEW SACHIVALAYA, GANDHINAGAR
+## Client Contact Details
+## Start Date
+01/05/1999
+## Completion Date: 30/06/2000
+## Project Cost
+120.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Project Manager
+## Description of Duties
+• Overall responsible for project management, execution, quality control besides constant watch on the sources of supply of material, co-ordination with other staff members. • Project
+management, monitoring of progress, deployment of resources, guiding staff, review of works program, project monitoring for cost control and Quality Control. • Supervision of lying of horizontal
+and vertical curves as per IRC-38 1998 and IRC special publication. • Supervision of fixing of super elevation at curves • Supervision of highway construction like earth work GSB, WMM and BC
+to ensure specification compliance • Monitoring deployment of resources and manpower as per the work program to obviate time and cost over run • Evolve work program, method statement
+for carrying out the works to the technical requirements. • Inspection of construction equipment and machinery, ensuring safety of work, property and general public. • Examine and attend to
+the measurement of the completed works in the prescribed
+## Nature of Assignment
+Execution
+## National Highway No.
+## State Highway No.
+24
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/05/1999
+30/06/2000
+11/11/2025, 16:41
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+32.5 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        32.5 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Construction of 2/4 Laning from Neelmangala - Tumkur on the Section of NH-4, from Km 29.5 to Km 62 (Nelamangala - Tumkur Section) near Bangalore in Karnataka on BOT Basis. PPP; (Project
+Cost: INR 210 Crores). Length: 32.5 KM.
+## Country
+India
+## State
+KARNATAKA
+## Employer Name
+M/s BSBK Private Ltd
+## Employer Address
+808/809e, International Trade Tower , Nehru Place New Delhi
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+01/04/2002
+## Completion Date: 30/10/2004
+## Project Cost
+210.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+PPP
+## Designation
+Project Manager
+## Description of Duties
+• Overall responsible for project management, execution, quality control besides constant watch on the sources of supply of material, co-ordination with other staff members. • Project
+management, monitoring of progress, deployment of resources, guiding staff, review of works program, project monitoring for cost control and Quality Control. • Supervision of lying of horizontal
+and vertical curves as per IRC-38 1998 and IRC special publication. • Supervision of fixing of super elevation at curves • Supervision of highway construction like earth work GSB, WMM and BC
+to ensure specification compliance • Monitoring deployment of resources and manpower as per the work program to obviate time and cost over run • Evolve work program, method statement
+for carrying out the works to the technical requirements and the sound environmental guidelines stipulated in the contract • Inspection of construction equipment and machinery, ensuring safety
+of work, property and general public. • Examine and at
+## Nature of Assignment
+Execution
+## National Highway No.
+4
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/04/2002
+30/10/2004
+11/11/2025, 16:41
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+62.6 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        62.6 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Four laning of Bangalore Maddur State Highway SH-17: Design and Construction of Road from Km 11.60 to 82.50 excluding ch. from 45.40 Km to 51.20 Km (Ramnagara Town Limits) and from
+59.60 Km to 62.10 Km (Channapatna Town Limits) of Bangalore - Mysore State Highway (SH-17) (Project Cost: INR 160 Crores, Length-62.6 Km)
+## Country
+India
+## State
+KARNATAKA
+## Employer Name
+M/s Nagarjuna Construction Company Ltd
+## Employer Address
+Nagarjuna Hills Hyderabad
+## Client
+Karnataka Road Development Corporation Limited (KRDCL)
+## Client Address
+2nd Floor, Samparka Soudha, Opp Orion Mall, Dr Rajkumar Rd, Rajajinagar, Bengaluru, Karnataka 560010
+## Client Contact Details
+## Start Date
+06/11/2004
+## Completion Date: 04/05/2006
+## Project Cost
+160.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+PPP
+## Designation
+Project Manager
+## Description of Duties
+• Preparing of setting out data for checking quality assurance manual, making of work program, procurement of all types of material and machineries to be used on project. • Making quality
+control of various construction material, sending material for third party tests in outside laboratory, conducting various field tests and sampling as per requirement of MORTH Specifications,
+maintaining proper condition and liaison with outside agencies like Forest department, Mining department, Police department, RTO etc. • Ensuring that all works are carried out as per standard
+specifications and contractual stipulations. • Ensuring appropriate rehabilitation/ strengthening of distressed existing pavements. • Responsible for laying of bitumen pavement type including
+type of mix and material. • Responsible for type of locations, geometric design, horizontal/ vertical alignment, traffic control aspects and safety measures. • Determining strength
+characteristics of material and their suitability for u
+## Nature of Assignment
+Execution
+## National Highway No.
+## State Highway No.
+17
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+06/11/2004
+04/05/2006
+11/11/2025, 16:41
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+57 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        57 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Improvement, Operation and Maintenance of Rehabilitation and Strengthening of Existing 2-Lane Road and Widening to 4-Lane Divided Carriageway of Km 63.000 to Km 120.000 of NH-11
+(Bharatpur-Mahua Section) in the State of Rajasthan on Build, Operate and Transfer (BOT) Basis under NHDP Phase-III A. (Project Cost: INR 230 Crores, Length: 57 Km)
+## Country
+India
+## State
+RAJASTHAN
+## Employer Name
+M/s Madhucon Projects Ltd
+## Employer Address
+Madhucomn House 1129/A, Road No. 36, Hitec City Road Jubilee Hills. Hyderabad
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+08/05/2006
+## Completion Date: 30/06/2007
+## Project Cost
+230.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+PPP
+## Designation
+Project Manager
+## Description of Duties
+• Preparing of setting out data for checking quality assurance manual, making of work program, procurement of all types of material and machineries to be used on project. • Making quality
+control of various construction material, sending material for third party tests in outside laboratory, conducting various field tests and sampling as per requirement of MORTH Specifications,
+maintaining proper condition and liaison with outside agencies like Forest department, Mining department, Police department, RTO etc. • Ensuring that all works are carried out as per standard
+specifications and contractual stipulations. • Ensuring appropriate rehabilitation/ strengthening of distressed existing pavements. • Responsible for laying of bitumen pavement type including
+type of mix and material. • Responsible for type of locations, geometric design, horizontal/ vertical alignment, traffic control aspects and safety measures. • Determining strength
+characteristics of material and their suitability for u
+## Nature of Assignment
+O&M
+## National Highway No.
+11
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+08/05/2006
+30/06/2007
+11/11/2025, 16:41
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+120.6 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        120.6 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Feasibility Study and Detailed Project Report for 4/6-Laning of Kuttipuram - Edapally Junction of NH-17 in theState of Kerala under NHDP Phase III Programme (Package No. NHDP-III/DL4/03.
+Length: 120.6 Km. Cost:INR 500 Crores.
+## Country
+India
+## State
+KERALA
+## Employer Name
+Wilbur Smith Associates Inc USA
+## Employer Address
+No. 75, 2nd Floor, 14th Cross, 1st Block, R.T. Nagar, Bangalore - 560032
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+01/07/2007
+## Completion Date: 30/05/2008
+## Project Cost
+500.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Team Leader cum Highway Engineer
+## Description of Duties
+As Team Leader, responsible for technical coordination, design studies, technical specifications, and othertechnical parameters as per standards & codes. To coordinate, supervise, monitor and
+examine the projectdelivery details & timely submission. Visit all roads and finalise the alignments in consultation with clientsMaintain harmonious relationship with client and within Team Ensure
+timely submission of reports
+## Nature of Assignment
+DPR
+## National Highway No.
+17
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/07/2007
+30/05/2008
+11/11/2025, 16:41
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+100 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Both
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        100 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Preparation of Detailed Project Report for 4-laning of NH-47 Salem to Coimbatore section in the state of TamilNadu. (Length: 100 Km; Project Cost: INR 820 Crores).
+## Country
+India
+## State
+TAMIL NADU
+## Employer Name
+Span Consultants Pvt Ltd Bangalore
+## Employer Address
+C-5, Brindavan Apartments, Hosur Road, Bangalore
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+01/06/2008
+## Completion Date: 15/07/2009
+## Project Cost
+820.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Team Leader cum Highway Engineer
+## Description of Duties
+Responsible for organizing field surveys, collection of relevant data and detailed review of the same, fieldreconnaissance of the project road, road investigation and assessment, road inventory
+surveys, alignmentstudies, formulation of design codes. Preparation of Road Improvement Plan, preparation of Site ClearancePlan, design of highway, storm water drainage and other drainage
+structure adjacent to the road, costestimation, preparation of technical specifications, preparation of project reports and tender documents forconstruction works. He was also responsible for
+Carrying out detailed reconnaissance of the projectalignment; identification of possible improvements in the existing alignment. Overview of traffic surveys, O-Dsurveys; Coordinating detailed
+topographic surveys; pavement investigations; material investigations, sub-soil investigations; Analyzing conducting geometric design as per international standards. His duties includedreview the
+design.
+## Nature of Assignment
+DPR
+## National Highway No.
+47
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/06/2008
+15/07/2009
+11/11/2025, 16:41
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+71.61 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Rigid
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        71.61 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Consultancy Services for Preparation of Detailed Project Report for 4-laning Divided Carriageway from Mahulia-Baharagora section of NH-33 from Km 277.500 to Km 333.500 (length-56 Km) &
+Baharagora-Chichra section of NH-6 from Km 199.200 to Km 183.587 (Length-15.613 Km) in the State of Jharkhand through PPP, Length: 71.61 Km INR 731 Cr.
+## Country
+India
+## State
+JHARKHAND
+## Employer Name
+M/s Rodic Consultant Private Limited
+## Employer Address
+1, Jai Singh Marg, Police Colony, Connaught Place, New Delhi, Delhi 110001
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+21/07/2009
+## Completion Date: 31/05/2010
+## Project Cost
+731.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Team Leader cum Highway Engineer
+## Description of Duties
+Responsible for organizing field surveys, collection of relevant data and detailed review of the same, field reconnaissance of the project road, road investigation and assessment, road inventory
+surveys, alignment studies, formulation of design codes. Preparation of Road Improvement Plan, preparation of Site Clearance Plan, design of highway, storm water drainage and other drainage
+structure adjacent to the road, cost estimation, preparation of technical specifications, preparation of project reports and tender documents for construction works. He was also responsible for
+Carrying out detailed reconnaissance of the project alignment; identification of possible improvements in the existing alignment. Overview of traffic surveys, O-D surveys; Coordinating detailed
+topographic surveys; pavement investigations; material investigations, sub-soil investigations; Analyzing conducting geometric design as per international standards. His duties included review the
+design.
+## Nature of Assignment
+DPR
+## National Highway No.
+33, 6
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+21/07/2009
+31/05/2010
+11/11/2025, 16:41
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+129.4 KM
+21.6 KM
+0 KM
+## Lane Tpye    Both
+## Lane Tpye    Both
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        129.4 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        21.6 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Preparation of Detailed Project Report for 2/4-laning with paved shoulders from Govindpur (Rajganj)-West Bengal Border section of NH-32 from Km 0 to Km 70.56 (Revised Km 56.889) INR 315 Cr
+& ITI More-Chas Ramgarh Section of NH-23 section from Km 0 to Km 80.5 (Revised Km 78.315) in the State of Jharkhand. Length-151 Km; Cost: INR 613 Cr
+## Country
+India
+## State
+JHARKHAND
+## Employer Name
+M/s Rodic Consultant Private Limited
+## Employer Address
+1, Jai Singh Marg, Police Colony, Connaught Place, New Delhi, Delhi 110001
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+01/06/2010
+## Completion Date: 28/04/2011
+## Project Cost
+613.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Team Leader cum Highway Engineer
+## Description of Duties
+Responsible for organizing field surveys, collection of relevant data and detailed review of the same, field reconnaissance of the project road, road investigation and assessment, road inventory
+surveys, alignment studies, formulation of design codes. Preparation of Road Improvement Plan, preparation of Site Clearance Plan, design of highway, storm water drainage and other drainage
+structure adjacent to the road, cost estimation, preparation of technical specifications, preparation of project reports and tender documents for construction works. He was also responsible for
+Carrying out detailed reconnaissance of the project alignment; identification of possible improvements in the existing alignment. Overview of traffic surveys, O-D surveys; Coordinating detailed
+topographic surveys; pavement investigations; material investigations, sub-soil investigations; Analyzing conducting geometric design as per international standards. His duties included review the
+design.
+## Nature of Assignment
+DPR
+## National Highway No.
+32, 23
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+01/06/2010
+28/04/2011
+11/11/2025, 16:42
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+82.55 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        82.55 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Development of 4-laning of Rohtak - Bawal Section of NH-71 from km 363.300 (design km 363.300) to km 450.800 (design km 445.853) in the State of Haryana on DBFOT Basis under NHDP-
+Phase-III) (Project Cost: INR 650 Crores, Length-82.553 Km)
+## Country
+India
+## State
+HARYANA
+## Employer Name
+M/s Varah Infra Ltd.
+## Employer Address
+H.No. 1668, Huda, Sector 4, Rewari Haryana
+## Client
+M/s Kurukshetra Expressway Pvt. Ltd. Ultimate Client: National Highways Authority of India
+## Client Address
+Toll Plaza Gangaicha Jaat, NH-71, village Gangaicha Jaat, Mastapur post office, Rewari, Rewari, Haryana, 123401, India
+## Client Contact Details
+## Start Date
+02/05/2011
+## Completion Date: 21/03/2014
+## Project Cost
+650.00   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+PPP
+## Designation
+Project Manager
+## Description of Duties
+• Preparing of setting out data for checking quality assurance manual, making of work program, procurement of all types of material and machineries to be used on project. • Making quality
+control of various construction material, sending material for third party tests in outside laboratory, conducting various field tests and sampling as per requirement of MORTH Specifications,
+maintaining proper condition and liaison with outside agencies like Forest department, Mining department, Police department, RTO etc. • Ensuring that all works are carried out as per standard
+specifications and contractual stipulations. • Ensuring appropriate rehabilitation/ strengthening of distressed existing pavements. • Responsible for laying of bitumen pavement type including
+type of mix and material. • Responsible for type of locations, geometric design, horizontal/ vertical alignment, traffic control aspects and safety measures. • Determining strength
+characteristics of material and their suitability for u
+## Nature of Assignment
+Execution
+## National Highway No.
+71
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+02/05/2011
+21/03/2014
+11/11/2025, 16:42
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+0 KM
+128.96 KM
+0 KM
+## Lane Tpye    Rigid
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        128.96 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Consultancy Services as Independent Engineer during Operation & Maintenance of 4-Lane Divided Carriageway Facility Constructed on BOT (Annuity) of Panagarh - Palsit - Dankuni Section from
+km 517.000 (design km 520.103) to km 645.600 (design km 649.072) of NH-2 in the State of West Bengal (Project Cost: INR 1019.75 Crores, Length-128.969 Km)
+## Country
+India
+## State
+WEST BENGAL
+## Employer Name
+Antea India Pvt Ltd. Formerly M/s Unihorn India Pvt. Ltd
+## Employer Address
+Magnum Tower, Tower No. 1, Unit No, 219-221, Golf Extension Road, Sector 58, Gurugram, Haryana
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+07/04/2014
+## Completion Date: 25/10/2017
+## Project Cost
+1,019.75   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+PPP
+## Designation
+Resident Engineer cum Acting Team Leader
+## Description of Duties
+• Inspection review and critical analysis of O & M agreement between Client and the Concessionaire. • Review Work Plan and schedules of various operation and maintenance activities. •
+Review the O & M Manual(s) prepared by the Concessionaire. • Review the performance of O & M activities including equipment service, traffic operation and safety, landscaping, environmental
+issues and wayside amenities. • Initiate necessary action to undertake maintenance obligations of the Concessionaire at risk and cost of the Concessionaire in the event of his failure to carry out
+O & M in terms of the Concession Agreement. • Undertake audit of the traffic at least once a month or at other times if so requested by Client. The traffic survey shall be carried out as per
+MORT&H guidelines. • Review and inspect the Project Highway at least in a month, or at other times as desired by Client during the O&M period and issue an Inspection Report of such
+inspections. • Review the accident record on the Project
+## Nature of Assignment
+O&M
+## National Highway No.
+2
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+07/04/2014
+25/10/2017
+11/11/2025, 16:42
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+45.08 KM
+0 KM
+0 KM
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        45.08 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Completed
+## Completion Certificate
+## Name of Work
+Construction Supervision Consultancy Services for Improvement and Up-gradation to 2 Lane (SH 2) with Earthen Shoulder of Patratu-Hendegir-Macluskiganj Road including Construction of Culverts
+& Bridges (Project Cost: INR 151.48 Crores, Length-45.081 Km).
+## Country
+India
+## State
+JHARKHAND
+## Employer Name
+M/s Indian Technocrat Ltd
+## Employer Address
+Plot No. 8, SEctor B7, Local Shopping Centre, Vasant Kunj, New Delhi
+## Client
+State Highways Authority of Jharkhand
+## Client Address
+Deen Dayal Nagar, near the Office of the Executive Engineer, NH Division, Booty Road, Ranchi-834008, Jharkhand
+## Client Contact Details
+## Start Date
+23/04/2018
+## Completion Date: 21/03/2020
+## Project Cost
+151.48   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Team Leader cum Sr. Highway Engineer
+## Description of Duties
+• Overall in-charge of the project supervision of the construction package. • Act as â€˜Engineer's Representative' acting on behalf of the consulting firm by the Employer. • Overall
+superintendence over the staff and other experts of construction package. • To guide, monitor, supervise and control all the activities related to supervision of the construction package. • To
+interact with the client as well as the employer. • Co-ordination of land acquisition process containing revenue land, GM land, jungle jhari and forest land. • Supervision of contractor's
+interim bills of the contractor. • To take care of road safety including work zone safety of the project. • Supervision of revised plan profile and revised estimate.
+## Nature of Assignment
+Supervision(EPC)
+## National Highway No.
+## State Highway No.
+2
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+23/04/2018
+21/03/2020
+11/11/2025, 16:42
+1/1
+## 2 Lane
+## 4 Lane
+## 6 Lane & Above
+66.31 KM
+6.97 KM
+0 KM
+## Lane Tpye    Flexi
+## Lane Tpye    Flexi
+## Lane Tpye    Rigid
+## Terrain Tpye
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        66.31 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        6.97 KM
+## Hill/Mountainous  0 KM
+## Plain/ Rolling        0 KM
+## Arbitration case handled
+## Did you achieve financial closure of this project
+## EIA of Infrastructre of project
+No
+No
+No
+## Technology
+Highway
+## Experience Details
+## Major Activities
+Highway Project
+## Project Status
+Ongoing
+## % Value of Work Completed
+95
+## View Certificate
+## Name of Work
+Consultancy Services for Authority's Engineer for Rehabilitation and Upgradation of Existing Road of 2-lane with Paved Shoulders Configuration in Purulia (Jhr Border) - Chandil (Junction with
+NH-33) Section of NH-32 [from Km 70.524 (Jhr/WB Border) to Km 84.400 (near Sainik School, Purulia) and from Km 94.300 (near Simulia Junction, Purulia) to Km 153.705 (near Chandil, Junction
+with NH-33 in the State of Jharkjand)] in the States of West Bengal and Jharkhand under NHDP Phase-IVB on EPC Mode
+## Country
+India
+## State
+WEST BENGAL,JHARKHAND
+## Employer Name
+M/s L N Malviya Infra Projects Pvt. Ltd.
+## Employer Address
+T-10,3rd Floor City Centre Plot No. I, Above Vishal Mega Mart, Zone-I, M.P.Nagar Bhopal (M.P.)
+## Client
+National Highways Authority of India
+## Client Address
+G 5&6, Dabri - Gurgaon Rd, Sector 10 Dwarka, Dwarka, Delhi, 110075
+## Client Contact Details
+## Start Date
+24/03/2020
+## Completion Date: ## Project Cost
+708.30   RS (Cr.)
+## Whether EPC or PPP or
+## Hybrid Annuity Model
+EPC
+## Designation
+Team Leader cum Sr. Highway Engineer
+## Description of Duties
+• Overall in-charge of the project supervision of the construction package. • Act as â€˜Engineer's Representative' acting on behalf of the consulting firm appointed by the Authority. •
+Overall superintendence over all the experts and other staff of construction package. • To guide, monitor, supervise and control all the activities related to supervision of the construction package.
+• To interact with the Project Director and the other officials of the Authority. • To interact with the employer's personnel. • Co-operate in land acquisition process. • Supervision of
+interim bills of the contractor. • To take care of safety aspects of the project. • To attend meetings with district administration on various issues
+## Nature of Assignment
+Supervision(EPC)
+## National Highway No.
+32
+## State Highway No.
+## MDR No.
+## ODR No.
+## Highway
+## Detailed Work Certificate
+## Attached Document
+## Project Duration Details
+## S.No.
+## Work Type
+## From Year
+## To Year
+1
+Full Time
+24/03/2020
+11/11/2025, 16:43
+1/1

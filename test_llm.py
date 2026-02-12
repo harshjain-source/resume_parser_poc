@@ -91,37 +91,51 @@ class LLMParser:
 # ... [PDFToMarkdown, TextCleaner, SectionSegmenter remain same as before] ...
 
 if __name__ == "__main__":
-    # This logic shows HOW the final JSON is created from the buckets
     print("--- 🧠 LLM Parsing Strategy (Final Step) ---")
+    STORAGE_BASE = "processed_resumes"
     
-    # 1. Load the buckets created in Step 3
-    if os.path.exists("semantic_sections.json"):
-        with open("semantic_sections.json", "r") as f:
-            buckets = json.load(f)
+    # 1. Detect most recent folder
+    if os.path.exists(STORAGE_BASE):
+        folders = [f for f in os.listdir(STORAGE_BASE) if os.path.isdir(os.path.join(STORAGE_BASE, f))]
+        if not folders:
+            print("❌ No processed resumes found in 'processed_resumes/'. Run test.py first.")
+            exit()
         
-        parser = LLMParser()
-        final_data = {"sections": {}}
-        total_in = 0
-        total_out = 0
+        # Sort by modification time to get latest
+        latest_folder = max(folders, key=lambda f: os.path.getmtime(os.path.join(STORAGE_BASE, f)))
+        output_dir = os.path.join(STORAGE_BASE, latest_folder)
+        input_file = os.path.join(output_dir, "semantic_blocks.json")
+        
+        print(f"📂 Processing folder: {latest_folder}")
 
-        # Loop through all available buckets and extract dynamically
-        for bucket_name, content in buckets.items():
-            if not content.strip(): continue
-                  
-            print(f"Processing Section: {bucket_name}...")
-            res, cb = parser.parse_bucket(bucket_name, content)
+        if os.path.exists(input_file):
+            with open(input_file, "r", encoding="utf-8") as f:
+                buckets = json.load(f)
             
-            if res:
-                final_data["sections"][bucket_name] = res
-                total_in += cb.prompt_tokens
-                total_out += cb.completion_tokens
+            parser = LLMParser()
+            final_data = {"sections": {}}
+            total_in = 0
+            total_out = 0
 
-        # -- D. Final Summary --
-        print(f"\n✨ Extraction Complete!")
-        print(f"📈 TOTAL TOKEN SPEND: {total_in} (Input) + {total_out} (Output) = {total_in + total_out}")
+            for bucket_name, content in buckets.items():
+                if not content.strip(): continue
+                print(f"✨ Synthesizing: {bucket_name}...")
+                res, cb = parser.parse_bucket(bucket_name, content)
+                
+                if res:
+                    final_data["sections"][bucket_name] = res
+                    total_in += cb.prompt_tokens
+                    total_out += cb.completion_tokens
 
-        with open("final_resume.json", "w") as f:
-           json.dump(final_data, f, indent=4)
-        print("💾 Saved all extracted data to 'final_resume.json'")
+            # -- D. Final Summary --
+            print(f"\n✅ Extraction Complete!")
+            print(f"📈 TOTAL TOKEN SPEND: {total_in} (Input) + {total_out} (Output) = {total_in + total_out}")
+
+            output_file = os.path.join(output_dir, "final_resume.json")
+            with open(output_file, "w", encoding="utf-8") as f:
+               json.dump(final_data, f, indent=4)
+            print(f"💾 Saved final JSON to: {output_file}")
+        else:
+            print(f"❌ '{input_file}' not found in the latest folder.")
     else:
-        print("❌ Please run the previous steps first to generate buckets.")
+        print("❌ 'processed_resumes/' base directory not found.")

@@ -2,6 +2,7 @@ import fitz  # PyMuPDF
 import os
 import re
 import json
+import datetime
 
 # ==========================================
 # STEP 1: CONVERT PDF TO STRUCTURAL MARKDOWN
@@ -113,35 +114,48 @@ class SectionSegmenter:
 # MAIN EXECUTION
 # ==========================================
 if __name__ == "__main__":
-    PDF_FILE = "BE.pdf"
+    PDF_FILE = r"C:\Users\Dell\Downloads\rodic resumes\rodic resumes\TL.pdf"
+    STORAGE_BASE = "processed_resumes"
     
     if os.path.exists(PDF_FILE):
+        # Create Unique Folder
+        filename = os.path.basename(PDF_FILE).replace(" ", "_")
+        ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        folder_name = f"{filename}_{ts}"
+        output_dir = os.path.join(STORAGE_BASE, folder_name)
+        
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            
         print(f"🚀 Running Structured Pipeline for: {PDF_FILE}")
+        print(f"📁 Output Directory: {output_dir}")
 
         # 1. EXTRACT
         raw_text = PDFToMarkdown(PDF_FILE).run()
+        with open(os.path.join(output_dir, "relatable_data.md"), "w", encoding="utf-8") as f: 
+            f.write(raw_text)
         
         # 2. CLEAN
         clean_text = TextCleaner().run(raw_text)
-        with open("relatable_data.md", "w", encoding="utf-8") as f: f.write(clean_text)
-        print("✅ Step 1 & 2: Structural Extraction & Advanced Cleaning Complete.")
+        with open(os.path.join(output_dir, "clean_text.txt"), "w", encoding="utf-8") as f: 
+            f.write(clean_text)
+        print("✅ Step 1 & 2 Complete (Raw and Clean text saved).")
 
         # 3. BLOCK
         blocks = SectionSegmenter().run(clean_text)
         
         # Save JSON
-        with open("semantic_sections.json", "w", encoding="utf-8") as f: 
+        with open(os.path.join(output_dir, "semantic_blocks.json"), "w", encoding="utf-8") as f: 
             json.dump(blocks, f, indent=4)
             
-        # Save Human-Readable Text
-        with open("semantic_sections.txt", "w", encoding="utf-8") as f:
+        # Optional: Save Human-Readable Text for debugging
+        with open(os.path.join(output_dir, "semantic_blocks.txt"), "w", encoding="utf-8") as f:
             for cat, content in blocks.items():
                 f.write(f"=== {cat} ===\n")
                 f.write(content)
                 f.write("\n" + "="*len(f"=== {cat} ===") + "\n\n")
                 
-        print("✅ Step 3: Semantic Segmentation (Blocking) Complete.")
-
-        print(f"\n📂 Outputs ready: 'relatable_data.md', 'semantic_sections.json', and 'semantic_sections.txt'")
+        print("✅ Step 3: Semantic Segmentation Complete.")
+        print(f"📂 Intermediate files saved in: {output_dir}")
     else:
         print(f"❌ Error: {PDF_FILE} not found.")
