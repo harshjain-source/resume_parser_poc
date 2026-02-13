@@ -9,21 +9,18 @@ class Settings(BaseSettings):
     
     # Paths
     BASE_DIR: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    RESUME_DIR: str = os.path.join(BASE_DIR, "resume")
+    RESUME_DIR: str = os.path.join(BASE_DIR, "processed_resumes")
     
-    # Model Config (OpenAI)
-    OPENAI_API_KEY: Optional[str] = None
-    OPENAI_MODEL: str = "gpt-3.5-turbo-0125"
-    EMBEDDING_MODEL: str = "text-embedding-3-small"
+    # Model Config (Gemini)
+    GOOGLE_API_KEY: Optional[str] = None
+    GEMINI_MODEL: str = "gemini-2.5-flash-lite"
     
-    # Chunking
-    CHUNK_SIZE: int = 500
-    CHUNK_OVERLAP: int = 50
-
-    # OCR
-    TESSERACT_PATH: Optional[str] = None # Path to tesseract executable if not in PATH
-
     class Config:
         env_file = ".env"
+        extra = "ignore"
+
+    def get_timestamp(self) -> str:
+        import datetime
+        return datetime.datetime.now().isoformat()
 
 settings = Settings()

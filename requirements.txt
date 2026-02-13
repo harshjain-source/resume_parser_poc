@@ -10,13 +10,22 @@ httpx
 
 # PDF
 pymupdf
-pdfplumber
 
 # AI
 langchain
-langchain-openai
-openai
-tiktoken
+langchain-core
+langchain-google-genai
+
+# UI
+streamlit
+
+# Image Processing
+Pillow
+opencv-python
+
+# Validation
+email-validator
 
 # Utils
 numpy
+python-dotenv

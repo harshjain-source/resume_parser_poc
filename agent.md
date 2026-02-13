@@ -108,38 +108,19 @@ The system uses a **UUID-based storage** approach for traceability.
 
 ```
 resume_parser/
-├── resume/
-│   └── {resume_uuid}/
-│       ├── original.pdf
-│       ├── extracted_text.json    (Schema Defined Below)
-│       ├── clean_text.json        (Schema Defined Below)
-│       ├── semantic_blocks.json   (Schema Defined Below)
-│       ├── chunks.json            (Schema Defined Below)
-│       ├── embeddings/            (Local Vector Store Index)
-│       ├── logs/                  (Processing Logs)
-│       └── final_resume.json      (Final Schema)
 ├── pipeline/
-│   ├── text_extractor.py
-│   ├── text_cleaner.py
-│   ├── semantic_blocker.py
-│   ├── chunker.py             (Uses LangChain TextSplitter)
-│   ├── embedder.py            (Handles Embeddings & Vector Store Creation)
-│   ├── retriever.py           (Handles Similarity Search)
-│   ├── llm_parser.py          (Uses LangChain LLM + Prompts)
-│   └── validator.py
-├── api/
-│   └── server.py              (FastAPI Entry Point)
-├── config/
-│   └── settings.py            (Centralized Configuration & Constants)
-├── prompts/                   (Centralized Prompt Management)
-│   ├── system_prompts.yaml    (Persona & Strict Rules)
-│   └── extraction_templates.py (Task-Specific Templates)
+│   ├── text_extractor.py      (Stage 1: Structural Extraction)
+│   ├── text_cleaner.py        (Stage 2: Advanced Cleaning)
+│   ├── semantic_blocker.py    (Stage 3: Keyword-based Segmenting)
+│   └── llm_parser.py          (Stage 7: LLM-based Structured Parsing)
 ├── schemas/
-│   └── resume_schema.py
-├── tests/
-├── main_pipeline.py
+│   └── resume_schema.py       (Pydantic Data Contracts)
+├── config/
+│   └── settings.py            (Global Configuration)
+├── processed_resumes/         (UUID-based output storage)
+├── main_pipeline.py           (Central Pipeline Orchestrator)
+├── streamlit_app.py           (Frontend Dashboard)
 ├── requirements.txt
-├── Dockerfile                 (System Dependencies & Environment)
 └── agent.md
 ```
 

@@ -17,7 +17,7 @@ class TextCleaner:
         self.output_txt_path = os.path.join(self.base_path, "clean_text.txt")
 
     def _repair_encoding(self, text: str) -> str:
-        """Fixes common PDF encoding artifacts (Mojibake)."""
+        """Fixes common PDF encoding artifacts."""
         replacements = {
             r"â€“": "-", r"Ã¢â‚¬â€œ": "-", r"Â": "", r"â€™": "'",
             r"â€œ": '"', r"â€?": '"', r"â€¢": "•", 
@@ -27,142 +27,167 @@ class TextCleaner:
             text = text.replace(pattern, replacement)
         return text
 
-    def _remove_links(self, text: str) -> str:
-        url_pattern = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
-        return re.sub(url_pattern, '', text)
-
-    def _remove_ui_noise(self, text: str) -> str:
-        """Removes portal buttons and repetitive system noise."""
+    def _remove_noise(self, text: str) -> list[str]:
+        """Removes portal buttons, system headers, footers, unusual UI links, and placeholders."""
+        # 1. UI Buttons & Portal artifacts (Unusual links) - Point 7 & 1
         ui_patterns = [
             r"View\s*Uploaded\s*File", r"View\s*File", r"Download\s*File",
-            r"Supporting\s*Documents?", r"View\s*Span", r"VIEW\s*CONSULTANT\s*DETAILS",
-            r"\|\|", # Artifact from button separators
+            r"Supporting\s*Documents?", r"VIEW\s*CONSULTANT\s*DETAILS",
+            r"Click\s*here\s*to\s*view", r"ATTACHMENT\s*DETAILS",
+            r"\|\|", r"---+"  # Separators (Point 7)
         ]
         for p in ui_patterns:
             text = re.sub(p, '', text, flags=re.IGNORECASE)
-        return text
-
-    def _remove_headers_footers(self, text: str) -> str:
-        """Removes recurring proposal headers and page counters."""
-        lines = text.splitlines()
-        cleaned_lines = []
         
+        # 2. System Headers/Footers
         noise_patterns = [
-            r"Technical Proposal\s*\|\s*\d+", # Page titles with numbers
-            r"INFRACON,\s*Ministry of Road Transport.*India", # System footers
-            r"\d{2}/\d{2}/\d{4},\s*\d{2}:\d{2}", # System Timestamps
-            r"^\d+/\d+$", # Page counters like 1/2, 2/2
+            r"Page \d+ of \d+", 
+            r"Technical Proposal\s*\|\s*\d+",  
+            r"INFRACON",
+            r"Ministry of Road Transport.*India",
+            r"Curriculum\s*Vitae.*Page\s*\d+", # CV page headers
+            r"\d{2}/\d{2}/\d{4},\s*\d{2}:\d{2}", # Timestamps (Date/Time of export)
+            r"Document\s*Generated\s*on.*" # Generation footers
         ]
+        
+        # 3. Filter unusual naked links
+        unusual_link_pattern = r"https?://[^\s]+\.doc[^\s]*|https?://[^\s]+\.pdf[^\s]*"
+        text = re.sub(unusual_link_pattern, '', text, flags=re.IGNORECASE)
+
+        lines = text.splitlines()
+        cleaned = []
+        seen_headers = set() # For Point 4 (Deduplication)
+
+        # Common headers to deduplicate
+        header_dedup_list = ["TECHNICAL PROPOSAL", "Proposed Position", "Bridge Structural Engineer"]
 
         for line in lines:
             line_s = line.strip()
-            if not line_s:
+            
+            # Phase A: Blank Lines & Form Feeds
+            if not line_s or line_s == "\x0c":
                 continue
-            # Check for systemic noise
+
+            # Phase B: Placeholder Removal (Point 1)
+            # Remove lines like "Passport: Not Uploaded" or "Projects: Nil"
+            placeholders = [r":\s*Nil$", r":\s*NA$", r":\s*N/A$", r":\s*--$", r":\s*Not\s*Uploaded$"]
+            if any(re.search(p, line_s, re.IGNORECASE) for p in placeholders):
+                continue
+            
+            # Phase C: Noise Patterns
             if any(re.search(p, line_s, re.IGNORECASE) for p in noise_patterns):
                 continue
-            
-            # NEVER use .isdigit() on a whole line to delete it, 
-            # as serial numbers (1, 2, 3) and data (40, 60) are critical.
-            
-            cleaned_lines.append(line_s)
-            
-        return "\n".join(cleaned_lines)
 
-    def _join_fragmented_data(self, text: str) -> str:
-        """
-        Combines fragmented fields like:
-        'Name of Staff' \n ':' \n 'John Doe' 
-        into:
-        'Name of Staff : John Doe'
-        """
-        lines = [line.strip() for line in text.splitlines() if line.strip()]
-        if not lines: return ""
-        
-        joined = []
-        skip_count = 0
-        
-        for i in range(len(lines)):
-            if skip_count > 0:
-                skip_count -= 1
+            # Phase D: Header Deduplication (Point 4)
+            is_static_header = any(h in line_s for h in header_dedup_list)
+            if is_static_header:
+                if line_s in seen_headers:
+                    continue
+                seen_headers.add(line_s)
+
+            # Phase E: Pure Separator cleanup (Point 7)
+            if re.match(r"^[#\s|:-]+$", line_s):
                 continue
-                
-            curr = lines[i]
+
+            # Specific case: "View" as a standalone line
+            if line_s.lower() == "view":
+                continue
+
+            cleaned.append(line_s)
+        return cleaned
+
+    def _compact_bio(self, lines: list[str]) -> list[str]:
+        """Consolidates Basic Details into a single Bio line (Point 8)."""
+        bio_fields = {}
+        target_keys = ["Name", "DOB", "Father Name", "Email", "Mobile"]
+        
+        new_lines = []
+        in_details = False
+        
+        for line in lines:
+            # Detect BIO section start
+            if "BASIC DETAILS" in line or "Before EKYC Data" in line:
+                in_details = True
+                new_lines.append(line)
+                continue
             
-            # Lookahead check for fragmented colons or values
-            # Case 1: "Label" \n ":" \n "Value"
-            if i + 2 < len(lines) and lines[i+1] == ":" and len(lines[i+2]) < 300:
-                joined.append(f"{curr} : {lines[i+2]}")
-                skip_count = 2
+            if in_details:
+                # Extract key-value if present
+                if " : " in line:
+                    key, val = line.split(" : ", 1)
+                    key_clean = key.strip().replace("##", "").strip()
+                    if key_clean in target_keys:
+                        bio_fields[key_clean] = val.strip()
+                        continue
+                
+                # If we hit next major section, flush bio and stop compaction
+                if "QUALIFICATION" in line or "COMPANY" in line:
+                    if bio_fields:
+                        bio_str = " | ".join([f"{k}: {v}" for k, v in bio_fields.items()])
+                        new_lines.append(f"BIO_SUMMARY : {bio_str}")
+                        bio_fields = {}
+                    in_details = False
+                    new_lines.append(line)
+                    continue
+            
+            new_lines.append(line)
+        return new_lines
+
+    def _join_fragments(self, lines: list[str]) -> list[str]:
+        """Combines fragmented fields like Label : Value (Point 3)."""
+        joined = []
+        skip = 0
+        for i in range(len(lines)):
+            if skip > 0:
+                skip -= 1
                 continue
+            curr = lines[i].strip()
+            
+            # Standard labels often found in these resumes
+            # Matches: ## Key \n : \n Value  OR  Key \n : \n Value
+            if i + 2 < len(lines):
+                next_line = lines[i+1].strip()
+                after_next = lines[i+2].strip()
+                if next_line == ":" or next_line == "## : ##":
+                    joined.append(f"{curr} : {after_next}")
+                    skip = 2
+                    continue
                 
             # Case 2: "Label :" \n "Value"
-            if curr.endswith(":") and i + 1 < len(lines) and len(lines[i+1]) < 300:
-                # Don't join if the label is too long (likely not a label)
-                if len(curr) < 50:
-                    joined.append(f"{curr} {lines[i+1]}")
-                    skip_count = 1
-                    continue
-
-            # Case 3: "Label" \n ": Value"
-            if i + 1 < len(lines) and lines[i+1].startswith(":") and len(curr) < 50:
+            if curr.endswith(":") and i + 1 < len(lines) and len(lines[i+1]) < 200 and len(curr) < 60:
                 joined.append(f"{curr} {lines[i+1]}")
-                skip_count = 1
+                skip = 1
                 continue
-            
-            joined.append(curr)
-                
-        return "\n".join(joined)
 
-    def _normalize_structure(self, text: str) -> str:
-        """Collapses excessive whitespace."""
-        # Normalize Horizontal space
-        text = re.sub(r'[ \t]+', ' ', text)
-        # Normalize Vertical space (reduce 3+ blanks to 1)
-        text = re.sub(r'\n\s*\n\s*\n+', '\n\n', text)
-        return text.strip()
+            joined.append(curr)
+        return joined
 
     def run(self):
         if not os.path.exists(self.input_path):
-            raise FileNotFoundError(f"Missing input: {self.input_path}")
+            raise FileNotFoundError(f"Missing input artifact: {self.input_path}")
             
         with open(self.input_path, 'r', encoding='utf-8') as f:
-            raw_data = json.load(f)
+            raw_text = json.load(f)["content"]
 
-        cleaned_pages = []
-        total_pages = len(raw_data["pages"])
+        text = self._repair_encoding(raw_text)
+        lines = self._remove_noise(text)
         
-        for page in raw_data["pages"]:
-            page_num = page["page_number"]
-            page_text = page["text"]
-            
-            # Step-by-step cleaning
-            page_text = self._repair_encoding(page_text)
-            page_text = self._remove_links(page_text)
-            page_text = self._remove_ui_noise(page_text)
-            page_text = self._remove_headers_footers(page_text)
-            
-            # Run joining twice to catch nested fragments
-            page_text = self._join_fragmented_data(page_text)
-            page_text = self._join_fragmented_data(page_text)
-            
-            if len(page_text.strip()) > 10:
-                # Inject a visible page marker for the Semantic Blocker to detect page spans
-                marked_text = f"[PAGE_START_{page_num}]\n{page_text}\n[PAGE_END_{page_num}]"
-                cleaned_pages.append(marked_text.strip())
-
-        # Final join and structural cleanup
-        full_content = "\n\n".join(cleaned_pages)
-        final_content = self._normalize_structure(full_content)
+        # Point 3: Fragment joining
+        lines = self._join_fragments(lines)
+        lines = self._join_fragments(lines)
+        
+        # Point 8: Bio Compaction
+        lines = self._compact_bio(lines)
+        
+        final_content = "\n".join(lines)
 
         # Artifact Generation
         output_data = {
             "content": final_content,
             "cleaning_log": [
-                f"Retained {len(cleaned_pages)} pages. Filtered portal noise.",
-                "REMOVED aggressive digit-only line deletion to preserve serial numbers and data.",
-                "Implemented intelligent label-value joining.",
-                "Repaired PDF encoding artifacts."
+                "Repaired PDF encoding artifacts.",
+                "Removed Rodic/INFRACON system noise.",
+                "Joined fragmented label-value pairs."
             ]
         }
 
@@ -175,11 +200,26 @@ class TextCleaner:
         return self.output_json_path
 
 if __name__ == "__main__":
-    TEST_UUID = "412fb8c8-865f-4872-b247-fbac12d7babf"
-    cleaner = TextCleaner(TEST_UUID)
+    # --- RUNNABLE TEST BLOCK ---
+    # This assumes Stage 1 has already been run for this UUID
+    TEST_UUID = "test_extraction_debug"
+    
+    print(f"⏳ Testing TextCleaner with ID: {TEST_UUID}...")
+    
     try:
-        path = cleaner.run()
-        print(f"✅ Recovery Cleaning Complete!")
-        print(f"📝 Fixed Text ready at: {cleaner.output_txt_path}")
+        cleaner = TextCleaner(TEST_UUID)
+        result_path = cleaner.run()
+        print(f"✅ Cleaning Successful!")
+        print(f"🔗 Output saved to: {result_path}")
+        
+        # Verify and show a snippet
+        if os.path.exists(cleaner.output_txt_path):
+            with open(cleaner.output_txt_path, 'r', encoding='utf-8') as f:
+                snippet = f.read()[:500]
+                print("\n--- CLEANED TEXT SNIPPET ---")
+                print(snippet + "...")
+                print("---------------------------\n")
     except Exception as e:
-        print(f"❌ Error during recovery: {e}")
+        print(f"❌ Cleaning Failed: {e}")
+        print("Ensure 'test_extraction_debug/extracted_text.json' exists before running this test.")
+

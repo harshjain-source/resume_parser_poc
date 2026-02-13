@@ -1,6 +1,3 @@
-
-<!-- PAGE_START_1 -->
-
 ## TECHNICAL PROPOSAL 
 ## Bridge Structural Engineer 
 Independent Engineer Services for Construction of new four-lane Access controlled Highway from Cuttack (end point of CRRR at NH-
@@ -100,11 +97,6 @@ assignment and debar him for an appropriate period to be decided by National Hig
 ## Year 
  
 ## Technical Proposal |882
-
-<!-- PAGE_END_1 -->
-
-
-<!-- PAGE_START_2 -->
 
 ## Profile
 ## Key Personnel:-Dharmireddi Sanyasi Naidu
@@ -241,11 +233,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/m_preview7S.asp?kp_id=50250&EncHid=67643.24878
 1/2
 ## Technical Proposal |883
-
-<!-- PAGE_END_2 -->
-
-
-<!-- PAGE_START_3 -->
 
 2
 JSR CONSTRUCTION PVT. LTD.
@@ -502,11 +489,6 @@ https://infracon.nic.in/m_preview7S.asp?kp_id=50250&EncHid=67643.24878
 2/2
 ## Technical Proposal |884
 
-<!-- PAGE_END_3 -->
-
-
-<!-- PAGE_START_4 -->
-
 ## 2 Lane
 ## 4 Lane
 ## 6 Lane & Above
@@ -627,11 +609,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=334794
 1/1
 ## Technical Proposal |885
-
-<!-- PAGE_END_4 -->
-
-
-<!-- PAGE_START_5 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -758,11 +735,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=334960
 1/1
 ## Technical Proposal |886
-
-<!-- PAGE_END_5 -->
-
-
-<!-- PAGE_START_6 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -891,11 +863,6 @@ https://infracon.nic.in/k_expDet.asp?dwk_id=393948
 1/1
 ## Technical Proposal |887
 
-<!-- PAGE_END_6 -->
-
-
-<!-- PAGE_START_7 -->
-
 ## 2 Lane
 ## 4 Lane
 ## 6 Lane & Above
@@ -1020,11 +987,6 @@ https://infracon.nic.in/k_expDet.asp?dwk_id=393951
 1/1
 ## Technical Proposal |888
 
-<!-- PAGE_END_7 -->
-
-
-<!-- PAGE_START_8 -->
-
 ## 2 Lane
 ## 4 Lane
 ## 6 Lane & Above
@@ -1147,11 +1109,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=335002
 1/1
 ## Technical Proposal |889
-
-<!-- PAGE_END_8 -->
-
-
-<!-- PAGE_START_9 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -1286,11 +1243,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=335009
 1/1
 ## Technical Proposal |890
-
-<!-- PAGE_END_9 -->
-
-
-<!-- PAGE_START_10 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -1427,11 +1379,6 @@ https://infracon.nic.in/k_expDet.asp?dwk_id=393954
 1/1
 ## Technical Proposal |891
 
-<!-- PAGE_END_10 -->
-
-
-<!-- PAGE_START_11 -->
-
 ## 2 Lane
 ## 4 Lane
 ## 6 Lane & Above
@@ -1559,11 +1506,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=336828
 1/1
 ## Technical Proposal |892
-
-<!-- PAGE_END_11 -->
-
-
-<!-- PAGE_START_12 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -1701,11 +1643,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=335431
 1/1
 ## Technical Proposal |893
-
-<!-- PAGE_END_12 -->
-
-
-<!-- PAGE_START_13 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -1859,11 +1796,6 @@ https://infracon.nic.in/k_expDet.asp?dwk_id=335678
 1/2
 ## Technical Proposal |894
 
-<!-- PAGE_END_13 -->
-
-
-<!-- PAGE_START_14 -->
-
 ## Tunnel Design softwares
 No
 ## As Senior Geologist Seepage analysis (No of projects)
@@ -1889,11 +1821,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=335678
 2/2
 ## Technical Proposal |895
-
-<!-- PAGE_END_14 -->
-
-
-<!-- PAGE_START_15 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -2029,11 +1956,6 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=356958
 1/1
 ## Technical Proposal |896
-
-<!-- PAGE_END_15 -->
-
-
-<!-- PAGE_START_16 -->
 
 ## 2 Lane
 ## 4 Lane
@@ -2174,5 +2096,3 @@ INFRACON, Ministry of Road Transport & consultant_highways, Government of India
 https://infracon.nic.in/k_expDet.asp?dwk_id=393656
 1/1
 ## Technical Proposal |897
-
-<!-- PAGE_END_16 -->

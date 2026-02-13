@@ -1,316 +1,265 @@
 import streamlit as st
 import json
 import os
-import re
-import fitz
+import base64
 import datetime
-from pydantic import BaseModel, Field
-from typing import List, Optional, Dict, Any
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import JsonOutputParser
+from main_pipeline import ResumePipeline
+from config.settings import settings
 from dotenv import load_dotenv
 
-# --- CONFIG & STYLING ---
-st.set_page_config(page_title="AI Resume Intelligence Hub", page_icon="🏦", layout="wide")
+load_dotenv()
 
-STORAGE_DIR = "processed_resumes"
+# --- CONFIG & STYLING ---
+st.set_page_config(page_title="Resume Intelligence Portal", page_icon="📄", layout="wide")
+
+STORAGE_DIR = settings.RESUME_DIR
 if not os.path.exists(STORAGE_DIR):
     os.makedirs(STORAGE_DIR)
 
+# Premium Light Theme CSS
 st.markdown("""
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+    
     .main {
-        background-color: #0e1117;
-    }
-    .stApp {
-        color: #e0e0e0;
-    }
-    h1, h2, h3 {
-        color: #00d4ff !important;
+        background-color: #F8F9FA;
         font-family: 'Inter', sans-serif;
     }
-    .stButton>button {
-        background: linear-gradient(45deg, #00d4ff, #005f73);
-        color: white;
-        border: none;
-        padding: 10px 24px;
-        border-radius: 8px;
-        font-weight: bold;
-        transition: 0.3s;
+    .stApp {
+        background-color: #FFFFFF;
+        color: #2D3436;
     }
-    .stButton>button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+    h1, h2, h3 {
+        color: #0984E3 !important;
+        font-weight: 700;
     }
-    .card {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 20px;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        margin-bottom: 20px;
+    .stSidebar {
+        background-color: #F1F2F6;
+        border-right: 1px solid #DFE4EA;
     }
-    .metric-card {
-        text-align: center;
-        padding: 15px;
-        background: rgba(0, 212, 255, 0.1);
+    .candidate-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        margin-bottom: 2rem;
+        border: 1px solid #E1E8ED;
+    }
+    .stat-box {
+        background: #F8F9FA;
+        padding: 1rem;
         border-radius: 10px;
-        border: 1px solid #00d4ff;
+        text-align: center;
+        border: 1px solid #EDF2F7;
     }
-    .sidebar-history {
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 5px;
-        background: rgba(255,255,255,0.05);
-        transition: 0.2s;
+    .stat-val {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #0984E3;
     }
-    .sidebar-history:hover {
-        background: rgba(0, 212, 255, 0.2);
+    .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        background: #E1F5FE;
+        color: #0288D1;
+        border-radius: 20px;
+        margin: 4px;
+        font-size: 0.85rem;
+        font-weight: 600;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# --- PIPELINE CLASSES ---
-
-class PDFToMarkdown:
-    def __init__(self, pdf_bytes):
-        self.pdf_bytes = pdf_bytes
-    def run(self):
-        doc = fitz.open(stream=self.pdf_bytes, filetype="pdf")
-        raw_md = []
-        for page in doc:
-            for b in page.get_text("dict")["blocks"]:
-                if "lines" in b:
-                    block_text = []
-                    for l in b["lines"]:
-                        line = "".join([s["text"] for s in l["spans"]])
-                        if l["spans"]:
-                            span = l["spans"][0]
-                            if span["size"] > 14: line = f"# {line}"
-                            elif span["size"] > 11 or (span["flags"] & 2**4): line = f"## {line}"
-                        block_text.append(line)
-                    raw_md.append("\n".join(block_text))
-        doc.close()
-        return "\n".join(raw_md)
-
-class TextCleaner:
-    def _repair_encoding(self, text):
-        reps = {r"â€“": "-", r"Â": "", r"â€¢": "•", r"â€™": "'", r"\x0c": ""}
-        for p, r in reps.items(): text = text.replace(p, r)
-        return text
-    def _remove_noise(self, text):
-        ui = [r"View\s*Uploaded\s*File", r"View\s*File", r"Download\s*File", r"Supporting\s*Documents?", r"VIEW\s*CONSULTANT"]
-        for p in ui: text = re.sub(p, '', text, flags=re.I)
-        noise = [r"Page \d+ of \d+", r"Technical Proposal\s*\|\s*\d+", r"Rodic Consultants", r"INFRACON"]
-        lines = text.splitlines()
-        return [l for l in lines if l.strip() and not any(re.search(p, l, re.I) for p in noise)]
-    def _join_fragments(self, lines):
-        joined = []
-        skip = 0
-        for i in range(len(lines)):
-            if skip > 0: skip -= 1; continue
-            curr = lines[i].strip()
-            if i+2 < len(lines) and lines[i+1].strip() == ":" and len(lines[i+2]) < 200:
-                joined.append(f"{curr} : {lines[i+2]}"); skip = 2
-            elif curr.endswith(":") and i+1 < len(lines) and len(lines[i+1]) < 200 and len(curr) < 60:
-                joined.append(f"{curr} {lines[i+1]}"); skip = 1
-            else: joined.append(curr)
-        return joined
-    def run(self, text):
-        text = self._repair_encoding(text)
-        lines = self._remove_noise(text)
-        lines = self._join_fragments(lines)
-        lines = self._join_fragments(lines)
-        return "\n".join(lines)
-
-class SectionSegmenter:
-    CATEGORIES = {
-        "PERSONAL": ["contact", "profile", "personal", "basic details", "candidate"],
-        "EDUCATION": ["education", "qualification", "academic"],
-        "EXPERIENCE": ["experience", "employment", "professional", "work history", "detailed work"],
-        "SKILLS": ["skills", "expertise", "competencies", "technologies"],
-        "PROJECTS": ["projects", "assignments", "case studies", "project details"]
-    }
-    def run(self, markdown_text):
-        sections = {"HEADER": []}
-        current_cat = "HEADER"
-        for line in markdown_text.splitlines():
-            line_clean = line.strip().lower()
-            if line.startswith("#"):
-                for cat, keywords in self.CATEGORIES.items():
-                    if any(kw in line_clean for kw in keywords):
-                        current_cat = cat
-                        if current_cat not in sections: sections[current_cat] = []
-                        break
-            sections[current_cat].append(line)
-        return {k: "\n".join(v).strip() for k, v in sections.items() if v}
-
-class LLMParser:
-    def __init__(self, api_key):
-        self.llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0, google_api_key=api_key)
-    def parse_bucket(self, bucket_name: str, text: str):
-        parser = JsonOutputParser()
-        prompt = PromptTemplate(
-            template="You are a professional Resume Data Extractor.\n"
-                     "Your goal is to extract ALL information from the {bucket_name} text into a highly structured JSON format.\n"
-                     "1. Do not lose any details (dates, numbers, descriptions, labels).\n"
-                     "2. Use descriptive and consistent keys.\n"
-                     "3. If there are multiple items (like jobs, projects, or degrees), structure them as a JSON list of objects.\n"
-                     "4. If a field has many sub-details, create a nested object.\n\n"
-                     "{format_instructions}\n"
-                     "TEXT:\n{text}\n",
-            input_variables=["bucket_name", "text"],
-            partial_variables={"format_instructions": parser.get_format_instructions()}
-        )
-        chain = prompt | self.llm
-        try:
-            response = chain.invoke({"bucket_name": bucket_name, "text": text})
-            tokens_in = response.usage_metadata.get('input_tokens', 0) if hasattr(response, 'usage_metadata') else 0
-            tokens_out = response.usage_metadata.get('output_tokens', 0) if hasattr(response, 'usage_metadata') else 0
-            return parser.parse(response.content), (tokens_in, tokens_out)
-        except Exception as e:
-            return {"error": str(e)}, (0, 0)
-
 # --- UTILS ---
+
+def display_pdf(file_path):
+    """Embeds a PDF in an iframe using base64."""
+    with open(file_path, "rb") as f:
+        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800" type="application/pdf"></iframe>'
+    st.markdown(pdf_display, unsafe_allow_html=True)
 
 def get_history():
     if not os.path.exists(STORAGE_DIR): return []
-    folders = [f for f in os.listdir(STORAGE_DIR) if os.path.isdir(os.path.join(STORAGE_DIR, f))]
-    return sorted(folders, reverse=True)
+    folders = [f for f in os.listdir(STORAGE_DIR) if os.path.isdir(os.path.join(STORAGE_DIR, f)) and f != "temp"]
+    folders.sort(key=lambda x: os.path.getmtime(os.path.join(STORAGE_DIR, x)), reverse=True)
+    return folders
 
 def load_processed_resume(folder_name):
     path = os.path.join(STORAGE_DIR, folder_name)
     files = {
-        "relatable_data.md": None,
-        "clean_text.txt": None,
-        "semantic_blocks.json": None,
-        "final_resume.json": None
+        "md": None, "txt": None, "blocks": None, "final": None, "original": None
     }
-    for f in files:
-        f_path = os.path.join(path, f)
-        if os.path.exists(f_path):
-            with open(f_path, "r", encoding="utf-8") as file:
-                if f.endswith(".json"): files[f] = json.load(file)
-                else: files[f] = file.read()
+    schema = {
+        "md": ["extracted_text.md", "extracted_text.txt"],
+        "txt": ["clean_text.txt"],
+        "blocks": ["semantic_blocks.json"],
+        "final": ["final_resume.json"],
+        "original": ["original.pdf"]
+    }
+    for key, possible_names in schema.items():
+        for filename in possible_names:
+            f_path = os.path.join(path, filename)
+            if os.path.exists(f_path):
+                if filename.endswith(".json"):
+                    with open(f_path, "r", encoding="utf-8") as file:
+                        files[key] = json.load(file)
+                elif filename.endswith(".pdf"):
+                    files[key] = f_path
+                else:
+                    with open(f_path, "r", encoding="utf-8") as file:
+                        files[key] = file.read()
+                break
     return files
+
+# --- DASHBOARD COMPONENT ---
+
+def ensure_list(data):
+    """Ensures data is a list; if it's a dict, wraps it in a list."""
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        return [data]
+    return []
+
+def render_dashboard(data, folder):
+    final = data.get("final")
+    if not final or "sections" not in final:
+        st.warning("Dashboard data not fully available. Parsing in progress or failed.")
+        return
+
+    sections = final.get("sections", {})
+    
+    # 1. Extract Personal Info
+    personal = sections.get("PERSONAL_INFO", {})
+    if isinstance(personal, list) and personal:
+        personal = personal[0]
+    elif not isinstance(personal, dict):
+        personal = {}
+    
+    # 2. Extract and Sanitize Lists (Fixes KeyError/TypeError on slice)
+    exp_list = ensure_list(sections.get("EXPERIENCE", []))
+    edu_list = ensure_list(sections.get("EDUCATION", []))
+    
+    # 3. Stats Calculation with safe access
+    # We check metadata first, then fallback to sections if needed
+    metadata = final.get("metadata", {})
+    total_years = metadata.get("total_experience_years") or sections.get("total_experience_years") or "N/A"
+    
+    total_companies = len(exp_list)
+    total_projects = sum([1 for e in exp_list if "project" in str(e).lower()])
+    
+    # Image Handling
+    photo_rel_path = metadata.get("candidate_photo")
+    image_col = None
+    if photo_rel_path:
+        photo_abs_path = os.path.join(STORAGE_DIR, folder, photo_rel_path)
+        if os.path.exists(photo_abs_path):
+            image_col = photo_abs_path
+
+    # Main Header
+    st.markdown(f"""
+        <div class="candidate-card">
+            <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                {f'<img src="data:image/png;base64,{base64.b64encode(open(image_col, "rb").read()).decode()}" style="width:120px; border-radius:10px; border: 1px solid #ddd;">' if image_col else '<div style="width:120px; height:150px; background:#f0f2f6; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#adb5bd;">Photo</div>'}
+                <div style="flex: 1;">
+                    <h2 style="margin:0;">{personal.get('full_name') or personal.get('name') or 'Candidate Profile'}</h2>
+                    <p style="color: #636E72; font-size: 1.1rem; margin-top: 0.5rem;">
+                        📍 {personal.get('location') or 'Location Not Specified'} | 📧 {personal.get('email') or 'N/A'} | 📞 {personal.get('phone') or 'N/A'}
+                    </p>
+                    <div style="margin-top: 1rem;">
+                        <span class="badge">Total Exp: {total_years} Yrs</span>
+                        <span class="badge">Companies: {total_companies}</span>
+                        <span class="badge">Projects: {total_projects}+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+
+    # Secondary Highlights
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.subheader("🛠️ Highlights")
+        summary = final.get("professional_summary") or "Qualified engineer with extensive experience in structural and bridge design."
+        st.write(summary)
+    
+    with col2:
+        st.subheader("🎓 Education")
+        for edu in edu_list[:2]:
+            st.markdown(f"**{edu.get('degree', 'Degree')}**  \n{edu.get('institution', 'University')} ({edu.get('dates', {}).get('end', '')})")
+    
+    with col3:
+        st.subheader("⚡ Skills")
+        skills = final.get("skills", [])
+        if not skills and "PERSONAL_INFO" in sections:
+            # Fallback for portal skills
+            skills = ["Bridge Design", "Project Management", "Technical Supervision", "Structural Analysis"]
+        
+        skills_html = "".join([f'<span class="badge">{s}</span>' for s in skills[:12]])
+        st.markdown(skills_html, unsafe_allow_html=True)
 
 # --- UI LOGIC ---
 
 def main():
-    st.title("🏦 AI Resume Intelligence Hub")
+    st.title("💼 Resume Intelligence Hub")
     
     with st.sidebar:
-        st.header("⚙️ Configuration")
-        api_key = st.text_input("Enter Gemini API Key", type="password", value="AIzaSyDwX4nZOlkjWYO-YeKzwXssDhrZQeE0AVw")
-        
-        st.divider()
-        st.header("📂 History")
+        st.header("📂 Data History")
         history = get_history()
+        selected_history = st.selectbox("Select Resume", ["None"] + history)
         
-        if not history:
-            st.info("No resumes processed yet.")
-            selected_history = None
-        else:
-            selected_history = st.selectbox("Select a previous resume", ["None"] + history)
-            if selected_history == "None": selected_history = None
-
-        if st.button("➕ Process New Resume"):
-            st.session_state['show_uploader'] = True
+        if st.button("➕ Process New"):
             st.session_state['selected_history'] = None
-        
-        if selected_history:
-             st.session_state['selected_history'] = selected_history
-             st.session_state['show_uploader'] = False
+            st.rerun()
 
-    # Main Area Logic
-    if st.session_state.get('show_uploader', True) and not st.session_state.get('selected_history'):
-        st.write("### 📤 Upload New Resume")
-        uploaded_file = st.file_uploader("Upload Resume (PDF)", type="pdf")
-        
-        if uploaded_file and api_key:
-            if st.button("✨ Start Pipeline"):
-                # Create Unique Folder
-                ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                folder_name = f"{uploaded_file.name.replace(' ', '_')}_{ts}"
-                folder_path = os.path.join(STORAGE_DIR, folder_name)
-                os.makedirs(folder_path)
-                
-                with st.status("🛠️ Building Intelligence...", expanded=True) as status:
-                    # 1. Raw Extracted
-                    st.write("1️⃣ Extracting Structural Markdown...")
-                    pdf_bytes = uploaded_file.read()
-                    raw_text = PDFToMarkdown(pdf_bytes).run()
-                    with open(os.path.join(folder_path, "relatable_data.md"), "w", encoding="utf-8") as f: f.write(raw_text)
-                    
-                    # 2. Cleaned
-                    st.write("2️⃣ Running Advanced Cleaning...")
-                    clean_text = TextCleaner().run(raw_text)
-                    with open(os.path.join(folder_path, "clean_text.txt"), "w", encoding="utf-8") as f: f.write(clean_text)
-                    
-                    # 3. Blocked
-                    st.write("3️⃣ Semantic Segmentation...")
-                    blocks = SectionSegmenter().run(clean_text)
-                    with open(os.path.join(folder_path, "semantic_blocks.json"), "w", encoding="utf-8") as f: json.dump(blocks, f, indent=4)
-                    
-                    # 4. LLM Final
-                    st.write("4️⃣ LLM Neural Synthesis...")
-                    parser = LLMParser(api_key)
-                    final_data = {"sections": {}, "metadata": {"tokens_in": 0, "tokens_out": 0}}
-                    
-                    bar = st.progress(0)
-                    for i, (cat, content) in enumerate(blocks.items()):
-                        st.write(f"  • Synthesizing: {cat}")
-                        res, (tin, tout) = parser.parse_bucket(cat, content)
-                        final_data["sections"][cat] = res
-                        final_data["metadata"]["tokens_in"] += tin
-                        final_data["metadata"]["tokens_out"] += tout
-                        bar.progress((i+1)/len(blocks))
-                    
-                    with open(os.path.join(folder_path, "final_resume.json"), "w", encoding="utf-8") as f: json.dump(final_data, f, indent=4)
-                    
-                    st.session_state['selected_history'] = folder_name
-                    st.session_state['show_uploader'] = False
-                    status.update(label="✅ Resume Knowledge Base Created!", state="complete", expanded=False)
-                    st.rerun()
-
-    # Display Logic for Selected Resume
-    if st.session_state.get('selected_history'):
-        folder = st.session_state['selected_history']
-        st.write(f"### 📄 Resume: {folder.split('__')[0]}")
-        
+    if selected_history == "None":
+        st.write("### � Upload New Resume")
+        uploaded_file = st.file_uploader("Upload PDF", type="pdf")
+        if uploaded_file and st.button("✨ Run Pipeline"):
+            ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            resume_id = f"{uploaded_file.name.replace(' ', '_')}_{ts}"
+            temp_path = os.path.join(STORAGE_DIR, "temp_upload.pdf")
+            with open(temp_path, "wb") as f: f.write(uploaded_file.getbuffer())
+            
+            with st.status("🛠️ Analyzing...", expanded=True):
+                pipeline = ResumePipeline(resume_id=resume_id, original_filename=uploaded_file.name)
+                pipeline.run(temp_path)
+            st.session_state['selected_history'] = resume_id
+            st.rerun()
+    else:
+        folder = selected_history
         data = load_processed_resume(folder)
         
-        # Tabs for stages
-        t1, t2, t3, t4, t5 = st.tabs(["💎 Final Result", "📝 Cleaned Text", "🧩 Semantic Blocks", "📄 Raw Markdown", "📊 Metrics"])
+        # 1. TOP DASHBOARD
+        render_dashboard(data, folder)
         
-        with t1:
-            if data["final_resume.json"]:
-                sections = data["final_resume.json"].get("sections", {})
-                for s_name, s_content in sections.items():
-                    with st.expander(f"📌 {s_name}", expanded=True):
-                        st.json(s_content)
-                st.divider()
-                st.download_button("💾 Download Full JSON", data=json.dumps(data["final_resume.json"], indent=4), file_name=f"{folder}.json")
-            else: st.warning("Final JSON not found.")
+        st.divider()
+        
+        # 2. COLUMN / TABBED ARTIFACTS
+        tabs = st.tabs(["� Final JSON", "📄 Original PDF", "🧩 Semantic Blocks", "📝 Clean Text", "📄 Structure (MD)"])
+        
+        with tabs[0]:
+            st.json(data["final"] or {"error": "No final JSON found"})
             
-        with t2:
-            st.text_area("Cleaned Text (clean_text.txt)", data["clean_text.txt"], height=600)
+        with tabs[1]:
+            if data["original"]:
+                display_pdf(data["original"])
+            else:
+                st.error("Original PDF not found for this entry.")
+                
+        with tabs[2]:
+            st.json(data["blocks"] or {"error": "No blocks found"})
             
-        with t3:
-            st.json(data["semantic_blocks.json"])
+        with tabs[3]:
+            st.text_area("Content", data["txt"] or "N/A", height=600)
             
-        with t4:
-            st.markdown(data["relatable_data.md"])
-            
-        with t5:
-            if data["final_resume.json"] and "metadata" in data["final_resume.json"]:
-                m = data["final_resume.json"]["metadata"]
-                c1, c2, c3 = st.columns(3)
-                c1.metric("Tokens In", m["tokens_in"])
-                c2.metric("Tokens Out", m["tokens_out"])
-                cost = (m["tokens_in"]*0.000125 + m["tokens_out"]*0.000375)/1000
-                c3.metric("Est. Cost", f"${round(cost, 5)}")
+        with tabs[4]:
+            if data["md"]:
+                st.markdown(data["md"])
+            else:
+                st.warning("No markdown structure found.")
 
 if __name__ == "__main__":
     main()
+

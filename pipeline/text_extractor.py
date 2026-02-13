@@ -6,7 +6,7 @@ from config.settings import settings
 class TextExtractor:
     """
     Stage 1: Text Extraction.
-    Uses PyMuPDF (fitz) for fast, independent text extraction.
+    Extracts text and preserves headers/bolding using font data.
     """
     def __init__(self, resume_id: str, original_filename: str = None):
         self.resume_id = resume_id
@@ -17,80 +17,94 @@ class TextExtractor:
         self.meta_path = os.path.join(base_path, "metadata.json")
         self.output_json_path = os.path.join(base_path, "extracted_text.json")
         self.output_txt_path = os.path.join(base_path, "extracted_text.txt")
+        self.output_md_path = os.path.join(base_path, "extracted_text.md")
 
     def run(self):
         """
-        Extracts text and saves to structured JSON.
+        Extracts structural text and saves to artifacts.
         """
         if not os.path.exists(self.pdf_path):
             raise FileNotFoundError(f"Missing PDF at {self.pdf_path}")
 
-        # Determine original filename
-        final_filename = self.original_filename
+        doc = fitz.open(self.pdf_path)
+        raw_md = []
         
-        # If not provided in init, try to read from metadata.json
-        if not final_filename and os.path.exists(self.meta_path):
-            try:
-                with open(self.meta_path, 'r', encoding='utf-8') as f:
-                    meta = json.load(f)
-                    final_filename = meta.get("original_filename")
-            except Exception:
-                pass
-        
-        # Default if still nothing
-        final_filename = final_filename or "unknown"
+        for page in doc:
+            page_blocks = []
+            for b in page.get_text("dict")["blocks"]:
+                if "lines" in b:
+                    block_text = []
+                    for l in b["lines"]:
+                        line = "".join([s["text"] for s in l["spans"]])
+                        if l["spans"]:
+                            span = l["spans"][0]
+                            # Use font size and flags (bit 4 is bold) for MD structure
+                            if span["size"] > 14: 
+                                line = f"# {line}"
+                            elif span["size"] > 11 or (span["flags"] & 2**4): 
+                                line = f"## {line}"
+                        block_text.append(line)
+                    page_blocks.append("\n".join(block_text))
+            
+            raw_md.append("\n".join(page_blocks))
+            
+        total_pages = len(doc)
+        doc.close()
+        full_text = "\n\n".join(raw_md)
 
-        # 1. Open Document
-        with fitz.open(self.pdf_path) as doc:
-            data = {
-                "pages": [],
-                "metadata": {
-                    "total_pages": len(doc), 
-                    "resume_id": self.resume_id,
-                    "original_filename": final_filename
-                }
+        # Artifact Generation
+        data = {
+            "content": full_text,
+            "metadata": {
+                "total_pages": total_pages,
+                "resume_id": self.resume_id,
+                "original_filename": self.original_filename or "unknown"
             }
+        }
 
-            # 2. Extract Text from each page with Layout Awareness (Blocks)
-            for page_num, page in enumerate(doc, 1):
-                # get_text("blocks") returns: (x0, y0, x1, y1, "text", block_no, block_type)
-                blocks = page.get_text("blocks")
-                
-                # Sort blocks: vertical first (y0), then horizontal (x0)
-                # This preserves reading flow for tables and multi-column sections
-                blocks.sort(key=lambda b: (b[1], b[0]))
-                
-                # Filter empty blocks and join with clear separation
-                page_content = [b[4].strip() for b in blocks if b[4].strip()]
-                
-                data["pages"].append({
-                    "page_number": page_num,
-                    "text": "\n".join(page_content),
-                    "origin": "pymupdf_blocks"
-                })
-
-        # 3. Save as JSON and TXT artifacts
         os.makedirs(os.path.dirname(self.output_json_path), exist_ok=True)
         
-        # Save JSON
         with open(self.output_json_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
-        
-        # Save Plain Text (for easy reading)
-        full_text = "\n\n".join([page["text"] for page in data["pages"]])
+            
         with open(self.output_txt_path, 'w', encoding='utf-8') as f:
+            f.write(full_text)
+            
+        with open(self.output_md_path, 'w', encoding='utf-8') as f:
             f.write(full_text)
             
         return self.output_json_path
 
 if __name__ == "__main__":
-    # Just for testing purposes:
-    TEST_UUID = "412fb8c8-865f-4872-b247-fbac12d7babf"
-    # Note: If no original_filename is passed, it will try to read from metadata.json
-    extractor = TextExtractor(TEST_UUID, original_filename="BE.pdf")
-    try:
-        path = extractor.run()
-        print(f"✅ Success! Data extracted to: {path}")
-        print(f"📄 Plain text saved to: {extractor.output_txt_path}")
-    except Exception as e:
-        print(f"❌ Error: {e}")
+    import shutil
+    #  # Test stub
+    # TEST_UUID = "test_uuid"
+    # extractor = TextExtractor(TEST_UUID)
+    # # Note: Requires a real PDF at resume/test_uuid/original.pdf
+
+
+    # --- RUNNABLE TEST BLOCK ---
+    TEST_UUID = "test_extraction_debug"
+    # This must be a path to a real PDF on your computer
+    SOURCE_PDF = r"C:\Users\Dell\Downloads\rodic resumes\rodic resumes\BE.pdf"
+    
+    # 1. Setup the storage folder
+    test_dir = os.path.join(settings.RESUME_DIR, TEST_UUID)
+    os.makedirs(test_dir, exist_ok=True)
+    
+    # 2. Check and Copy PDF
+    if os.path.exists(SOURCE_PDF):
+        # We save it as 'original.pdf' because the pipeline expects that name
+        shutil.copy(SOURCE_PDF, os.path.join(test_dir, "original.pdf"))
+        
+        # 3. Initialize and Run
+        extractor = TextExtractor(TEST_UUID, "BE.pdf")
+        result = extractor.run()
+        
+        print(f"✅ Extraction Successful!")
+        print(f"📄 Files generated in: {test_dir}")
+        print(f"🔗 Main output: {result}")
+    else:
+        print(f"❌ Error: Could not find the PDF at {SOURCE_PDF}")
+        print("Please check the 'SOURCE_PDF' path at the bottom of this file.")
+
