@@ -1,31 +1,29 @@
-# Core
+# --- Core Framework ---
 python-dotenv
 pydantic
 pydantic-settings
+email-validator
 
-# API
+# --- AI & LLM Orchestration ---
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-openai
+langchain-anthropic
+langchain-ollama
+langchain-sarvam-integration
+
+# --- API & Web ---
+streamlit
 fastapi
 uvicorn
 httpx
 
-# PDF
+# --- PDF & Document Processing ---
 pymupdf
-
-# AI
-langchain
-langchain-core
-langchain-google-genai
-
-# UI
-streamlit
-
-# Image Processing
 Pillow
 opencv-python
 
-# Validation
-email-validator
-
-# Utils
+# --- Utilities ---
 numpy
-python-dotenv
