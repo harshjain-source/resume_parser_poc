@@ -76,7 +76,7 @@ class SemanticBlocker:
         return self.output_json_path
 
 if __name__ == "__main__":
-    # --- RUNNABLE TEST BLOCK ---
+    # --- RUNNABLE TEST BLOCK ---hello
     TEST_UUID = "test_extraction_debug"
     print(f"🧩 Creating Semantic Blocks for: {TEST_UUID}...")
     
