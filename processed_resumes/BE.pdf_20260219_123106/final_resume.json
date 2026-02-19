@@ -1,0 +1,945 @@
+{
+    "resume_id": "BE.pdf_20260219_123106",
+    "extracted_at": "2026-02-19T12:31:07.300225",
+    "usage": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "total_tokens": 0
+    },
+    "sections": {
+        "INTRO_HEADER": {
+            "Note": "Extract all data from the text into valid JSON.",
+            "Project": {
+                "Title": "Independent Engineer Services for Construction of new four-lane Access controlled Highway from Cuttack (end point of CRRR at NH-16 near Tangi) to Kandarpur on SH-12 from Design Ch. 0+000 km to 21+225 under NH(O) on Hybrid Annuity Mode in the state of Odisha.",
+                "HighwayDetails": {
+                    "Name": "New four-lane Access controlled Highway from Cuttack to Kandarpur on SH-12",
+                    "StartPoint": "Cuttack (end point of CRRR at NH-16 near Tangi)",
+                    "EndPoint": "Kandarpur",
+                    "DesignChainageStart": "0+000 km",
+                    "DesignChainageEnd": "21+225 km",
+                    "ProjectUnder": "NH(O)",
+                    "ModeOfExecution": "Hybrid Annuity Mode",
+                    "State": "Odisha",
+                    "LaneConfiguration": "Four-lane",
+                    "TerrainBreakdown": {
+                        "HillMountain": null,
+                        "PlainRolling": null
+                    }
+                },
+                "TunnelDetails": null,
+                "BridgeDetails": null
+            },
+            "ProposedPosition": "Bridge Structural Engineer",
+            "NameOfFirm": "Rodic Consultants Pvt. Ltd.",
+            "NameOfStaff": "Dharmireddi Sanyasi Naidu",
+            "Profession": "Civil Engineering",
+            "DateOfBirth": "1st July 1970",
+            "YearsWithFirmEntity": "Available for this assignment",
+            "Nationality": "Indian",
+            "MembershipOfProfessionalSocieties": "Nil",
+            "DetailedTaskAssigned": "As mentioned in APPENDIX B-6 of the Proposal"
+        },
+        "LEGAL_CERTIFICATION": {
+            "Certification": {
+                "Candidate": {
+                    "Name": "Dharmireddi Sanyasi Naidu",
+                    "Address": "C/o Rodic Consultants Pvt. Ltd., 5 14 Ramannapalem Atchutapuram Visakhapatnam, Andhra Pradesh - 531011",
+                    "Undertaking": [
+                        "This CV correctly describes myself, my qualifications and my experience.",
+                        "National Highways Authority of India would be at liberty to debar me if any information given in the CV, in particular the Summary of Qualification & Experience vis-à-vis the requirements as per TOR is found incorrect.",
+                        "I have neither been debarred by National Highways Authority of India nor left any assignment with the consultants engaged by National Highways Authority of India / contracting firm (firm to be supervised now) for any continuing work of National Highways Authority of India without completing my assignment.",
+                        "I will be available for the entire duration of the current project.",
+                        "If I leave this assignment in the middle of the work, National Highways Authority of India would be at liberty to debar me from taking any assignment in any of the National Highways Authority of India works for an appropriate period of time to be decided by National Highways Authority of India.",
+                        "I have no objection if my services are extended by National Highways Authority of India for this work in future.",
+                        "If due to my inability to work on this project due to unavoidable circumstances..."
+                    ],
+                    "ProjectDetails": {
+                        "ProjectName": "Independent Engineer Services for Construction of new four-lane Access controlled Highway",
+                        "ProjectDescription": "from Cuttack (end point of CRRR at NH-16 near Tangi) to Kandarpur on SH-12 from Design Ch. 0+000 km to 21+225 under NH(O) on Hybrid Annuity Mode in the state of Odisha."
+                    }
+                },
+                "Firm": {
+                    "Name": "Rodic Consultants Pvt. Ltd.",
+                    "Certification": [
+                        "Shri Dharmireddi Sanyasi Naidu to the best of our knowledge has neither been debarred by National Highways Authority of India nor left his assignment with any other consulting firm engaged by National Highways Authority of India / Contracting firm (Rodic Consultants Pvt. Ltd.) for the ongoing projects.",
+                        "We understand that if the information about leaving the past assignment is known to National Highways Authority of India, National Highways Authority of India would be at liberty to remove the personnel from the present assignment and debar him for an appropriate period to be decided by National Highways Authority of India."
+                    ]
+                },
+                "Date": "11/11/2025",
+                "Signature": "[Signature of authorized representative of the Firm]"
+            },
+            "TunnelDetails": null,
+            "HighwayDetails": null,
+            "BridgeDetails": null
+        },
+        "EXPERIENCE": {
+            "individual_project_details": [
+                {
+                    "project_name": "Four laning including strengthening of existing two lane pavement from Barwa Adda to Barakar in the State of Bihar (Jharkhand) of NH 2 India",
+                    "client": "NHAI",
+                    "project_cost_cr": "1,930.00",
+                    "designation": "Asst. Bridge Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 63,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 63
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "ROB",
+                                "longest_span_mtr": 21.98,
+                                "total_length_mtr": 43.97,
+                                "cost_cr": 12
+                            },
+                            {
+                                "bridge_type": "ROB",
+                                "longest_span_mtr": 18.53,
+                                "total_length_mtr": 37.06,
+                                "cost_cr": 9
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 2,
+                            "60m-200m": 0,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Rehabilitation and Upgradation to 4/6 lane divided carriageway for Package KU-IV from Bhilwara Bypass (Km.12/0 of NH - 79) to Chittorgarh (Km. 183/0 of NH-79) in the state of Rajasthan",
+                    "client": "NHAI",
+                    "project_cost_cr": "1,774.00",
+                    "designation": "Bridge / Structural Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 63,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 63
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "ROB",
+                                "longest_span_mtr": 21.98,
+                                "total_length_mtr": 43.97,
+                                "cost_cr": 12
+                            },
+                            {
+                                "bridge_type": "ROB",
+                                "longest_span_mtr": 18.53,
+                                "total_length_mtr": 37.6,
+                                "cost_cr": 9
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 2,
+                            "60m-200m": 0,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Rehabilitation and Upgradation to 4/6 lane divided carriageway for Package KU-IV from Bhilwara Bypass (Km.12/0 of NH - 79) to Chittorgarh (Km. 183/0 of NH-79) in the state of Rajasthan",
+                    "client": "NHAI",
+                    "project_cost_cr": "1,774.00",
+                    "designation": "Bridge Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 1.8,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 1.8
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 45,
+                                "total_length_mtr": 1800,
+                                "cost_cr": 25
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 0,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 1
+                        }
+                    }
+                },
+                {
+                    "project_name": "Construction of Four Lane Road Over Bridge (KM.22.850 - KM. 24.650) Including Approaches at Butibori on Nagpur-Hyderabad Section of NH-7 In Lieu of Existing Level Crossing No.113 In the State of Maharashtra NS-29.",
+                    "client": "NHAI",
+                    "project_cost_cr": "25.00",
+                    "designation": "Bridge Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 1.8,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 1.8
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 450,
+                                "total_length_mtr": 1800,
+                                "cost_cr": 25
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 0,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 1
+                        }
+                    }
+                },
+                {
+                    "project_name": "Construction of Four Lane Road Over Bridge (KM.22.850 - KM. 24.650) Including Approaches at Butibori on Nagpur-Hyderabad Section of NH-7 In Lieu of Existing Level Crossing No.113 In the State of Maharashtra NS-29.",
+                    "client": "NHAI",
+                    "project_cost_cr": "25.00",
+                    "designation": "Bridge / Structural Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 28,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 28
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 15,
+                                "total_length_mtr": 65,
+                                "cost_cr": 11
+                            },
+                            {
+                                "bridge_type": "N/A",
+                                "longest_span_mtr": 18,
+                                "total_length_mtr": 120,
+                                "cost_cr": 18
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 10,
+                                "total_length_mtr": 80,
+                                "cost_cr": 15
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 3,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Construction Supervision for Widening and strengthening of 2 lanes to 4 lanes from Km 1121+000 to 1093+000 of Guwahati to Nalbari section of NH -31 on East West corridor under phase II programmer of NHDP in the state of Assam",
+                    "client": "NHAI",
+                    "project_cost_cr": "180.00",
+                    "designation": "Bridge / Structural Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 28,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 28
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 15,
+                                "total_length_mtr": 65,
+                                "cost_cr": 11
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 10,
+                                "total_length_mtr": 80,
+                                "cost_cr": 15
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 18,
+                                "total_length_mtr": 120,
+                                "cost_cr": 18
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 3,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Construction Supervision for Widening and strengthening of 2 lanes to 4 lanes from Km 1121+000 to 1093+000 of Guwahati to Nalbari section of NH -31 on East West corridor under phase II programmer of NHDP in the state of Assam.",
+                    "client": "NHAI",
+                    "project_cost_cr": "180.00",
+                    "designation": "Bridge Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 213.3,
+                                "type": "Both",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 213.3
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 29,
+                                "total_length_mtr": 254,
+                                "cost_cr": 11
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 26,
+                                "total_length_mtr": 211,
+                                "cost_cr": 9
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 0,
+                            "200m-500m": 2,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Design, Construction, Finance, Operation and Maintenance of Four-Laning of Narketpally - Addanki - Medarametla Road (SH-2) from Km 0.000 to 212.500 in the state of Andhra Pradesh under Public Private Partnership (PPP) on Build, Operate and Transfer (BOT) Basis",
+                    "client": "APRDC",
+                    "project_cost_cr": "1,196.84",
+                    "designation": "Bridge Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 79,
+                                "type": "Both",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 79
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 48,
+                                "type": "Both",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 48
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 35,
+                                "total_length_mtr": 150,
+                                "cost_cr": 2
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 28,
+                                "total_length_mtr": 110,
+                                "cost_cr": 1.5
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 33,
+                                "total_length_mtr": 90,
+                                "cost_cr": 1.2
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 43,
+                                "total_length_mtr": 182,
+                                "cost_cr": 2
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 4,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Consultancy Services for the Detailed Project Report 4/6 lane at NH 130 connecting NH 30 from Raipur to Bilaspur part of the National Highways Development Programme Phase IV",
+                    "client": "NHAI",
+                    "project_cost_cr": "15.50",
+                    "designation": "Bridge / Structural Engineer",
+                    "tunnelDetails": {
+                        "tunnels": [
+                            {
+                                "length_m": 120,
+                                "type": "Irrigation",
+                                "technology": "N/A"
+                            },
+                            {
+                                "length_m": 165,
+                                "type": "Irrigation",
+                                "technology": "N/A"
+                            }
+                        ],
+                        "length_ranges": {
+                            "Upto 200m": 2,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "1000m+": 0
+                        },
+                        "total_and_max_length": {
+                            "total": 450,
+                            "max_individual": 165
+                        },
+                        "evaluations": {
+                            "slope_stability": "No",
+                            "hydrological": "No",
+                            "software_used": "No"
+                        }
+                    },
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 6,
+                                "type": "Both",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 6
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 25,
+                                "total_length_mtr": 75,
+                                "cost_cr": 2.3
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 20,
+                                "total_length_mtr": 60,
+                                "cost_cr": 0.9
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 1,
+                            "60m-200m": 1,
+                            "200m-500m": 0,
+                            "500m-1000m": 0,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Project Management Consultancy for the Civil works of Additional Water Storage Reservoir for Visakhapatnam Steel Plant (VSP) as per Specification No: VSP/D&E/KBRII/CNSLT/2015/01",
+                    "client": "Rashtriya Ispat Nigam Limited",
+                    "project_cost_cr": "309.00",
+                    "designation": "Project Manager",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 51.11,
+                                "type": "Flexi",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 51.11
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 21,
+                                "total_length_mtr": 567,
+                                "cost_cr": 35
+                            },
+                            {
+                                "bridge_type": "ROB",
+                                "longest_span_mtr": 46,
+                                "total_length_mtr": 108.56,
+                                "cost_cr": 12
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 18,
+                                "total_length_mtr": 90,
+                                "cost_cr": 4.08
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 11,
+                                "total_length_mtr": 88,
+                                "cost_cr": 3.5
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 3,
+                            "200m-500m": 0,
+                            "500m-1000m": 1,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Consultancy Services for Authority Engineer for Supervision of Widening of existing road to 4 lane with paved shoulder from Km 0/000 to Km 51/119 [existing chainage km 476/700 to km 523/530] (51.119 Km) of Tadipatri to Muddanur Bypass section of NH67 in the State of Andhra Pradesh on EPC Mode under Annual Plan 2021-22",
+                    "client": "MORTH",
+                    "project_cost_cr": "424.99",
+                    "designation": "Bridge / Structural Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Flexi",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 51.11,
+                                "type": "Flexi",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 51.11
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 21,
+                                "total_length_mtr": 567,
+                                "cost_cr": 35
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 11,
+                                "total_length_mtr": 88,
+                                "cost_cr": 3.5
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 18,
+                                "total_length_mtr": 90,
+                                "cost_cr": 4.08
+                            },
+                            {
+                                "bridge_type": "ROB",
+                                "longest_span_mtr": 46,
+                                "total_length_mtr": 108.56,
+                                "cost_cr": 12
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 3,
+                            "200m-500m": 0,
+                            "500m-1000m": 1,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                },
+                {
+                    "project_name": "Consultancy Services for Authority Engineer for Supervision of Widening of existing road to 4 lane with paved shoulder from Km 0/000 to Km 51/119 [existing chainage km 476/700 to km 523/530] (51.119 Km) of Tadipatri to Muddanur Bypass section of NH67 in the State of Andhra Pradesh on EPC Mode under Annual Plan 2021-22",
+                    "client": "MORTH",
+                    "project_cost_cr": "424.99",
+                    "designation": "Bridge/ Structural Engineer",
+                    "tunnelDetails": null,
+                    "highway_details": {
+                        "lane_analysis": {
+                            "2lane": {
+                                "length_km": 0,
+                                "type": "Flexi",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            },
+                            "4lane": {
+                                "length_km": 51.11,
+                                "type": "Flexi",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 51.11
+                                }
+                            },
+                            "6lane_and_above": {
+                                "length_km": 0,
+                                "type": "Rigid",
+                                "terrain": {
+                                    "hill_mountain": 0,
+                                    "plain": 0
+                                }
+                            }
+                        },
+                        "arbitration_case_handled": "No"
+                    },
+                    "bridgeDetails": {
+                        "bridges": [
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 21,
+                                "total_length_mtr": 567,
+                                "cost_cr": 35
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 11,
+                                "total_length_mtr": 88,
+                                "cost_cr": 3.5
+                            },
+                            {
+                                "bridge_type": "Major Bridge",
+                                "longest_span_mtr": 18,
+                                "total_length_mtr": 90,
+                                "cost_cr": 4.08
+                            },
+                            {
+                                "bridge_type": "ROB",
+                                "longest_span_mtr": 46,
+                                "total_length_mtr": 108.56,
+                                "cost_cr": 12
+                            }
+                        ],
+                        "bridge_length_ranges": {
+                            "6m-60m": 0,
+                            "60m-200m": 3,
+                            "200m-500m": 0,
+                            "500m-1000m": 1,
+                            "greater_than_1000m": 0
+                        }
+                    }
+                }
+            ]
+        },
+        "PERSONAL_INFO": {
+            "personal_details": {
+                "proposed_position": null,
+                "firm": null,
+                "name": "Dharmireddi Sanyasi Naidu",
+                "Aadhar Number": null,
+                "DOB": "1970-07-01",
+                "Email": "dharmi_naidu@rediffmail.com",
+                "Contact": {
+                    "Mobile": "9440029761",
+                    "Alternate": "8106725516",
+                    "Landline": "8106725516"
+                },
+                "Address": {
+                    "Current": "5 14 Ramannapalem Atchutapuram Visakhapatnam",
+                    "Permanent": "5-14 ,Atchutapuram ,Ramannapalem ,Atchutapuram"
+                },
+                "Identity": {
+                    "PAN": "AIHPD1324M",
+                    "Passport": "Not Uploaded"
+                },
+                "Knowledge of Modern Computer Based Method of Surveying": "No",
+                "Registration Date": "2022-02-05",
+                "Last Modified Basic Details on": "2024-09-14",
+                "Last Accepted Details on": "2025-08-28",
+                "Current Status": "Active",
+                "Type": "Experienced",
+                "Aadhar Verified on": "2022-02-05T18:33:00",
+                "Mother Name": "D. Ramayyamma",
+                "Father Name": "C/O Dharmireddi Ramaswamy",
+                "Country": "India",
+                "Current State": "ANDHRA PRADESH",
+                "Current District": "Visakhapatnam District",
+                "Current Pin Code / Zip Code": "531011",
+                "Permanent State": "ANDHRA PRADESH",
+                "Permanent District": "Visakhapatnam",
+                "Permanent Pin Code / Zip Code": "531011",
+                "UAN Number": null,
+                "ID Proof": null,
+                "Verification Remarks": {
+                    "Verification Status": "Verified With Remarks",
+                    "Remarks": [
+                        {
+                            "Type": "EDU-1",
+                            "Institution": "Jawaharlal Nehru Technological University, Kakinada",
+                            "Degree": "Master of Technology (M.Tech)",
+                            "Status": "No revert received from the University/Institute."
+                        },
+                        {
+                            "Type": "EMP-1",
+                            "Employer": "WAPCOS Limited",
+                            "Status": "Verified."
+                        },
+                        {
+                            "Type": "REF-1",
+                            "Employer": "Rashtriya Ispat Nigam Limited",
+                            "StartDate": "2016-08-22",
+                            "EndDate": "Till Date",
+                            "Status": "No revert received."
+                        },
+                        {
+                            "Type": "REF-2",
+                            "Employer": "NHAI",
+                            "StartDate": "2014-11-17",
+                            "EndDate": "2016-03-31",
+                            "Status": "Verification under progress."
+                        }
+                    ]
+                }
+            },
+            "highway_details": null,
+            "tunnel_details": null,
+            "bridge_details": null
+        },
+        "EDUCATION": {
+            "error": "Error calling model 'gemini-2.5-flash-lite' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash-lite\\nPlease retry in 45.463574618s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash-lite'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '45s'}]}}",
+            "raw_text": "## QUALIFICATION DETAILS\n## Level\n## Qualification Level\n## Topic of the\n## Subject/Specialization\n## College\n## University/Board\n## Year Of\n## Passing\n## Percentage\n## Enrollment\n## Number\n## Certificate\n## Details\n## Certificate\n## Uploaded\n## Supporting\n## Documents\nGraduate/Degree\nBE/B.Tech /B.Sc. (Engineering)/\nAMIE in CIVIL Engineering or\nequivalent\nCivil Engineering\nG Pulla Reddy\nEngineering\nCollege\nSri Krishnadevaraya\nUniversity\n1995\n89204\nPost Graduate\nM.Tech/ ME in Structural\nEngineeri"
+        }
+    },
+    "metadata": {
+        "candidate_photo": "photo\\candidate_photo.jpeg"
+    }
+}

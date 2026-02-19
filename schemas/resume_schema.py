@@ -32,29 +32,6 @@ class ContactInfo(BaseModel):
     portfolio: Optional[str] = None
     website: Optional[str] = None
     other_links: Dict[str, str] = Field(default_factory=dict, description="Any other links")
-    
-    # New Dashboard Highlights
-    date_of_birth: Optional[str] = Field(None, description="Candidate's date of birth")
-    nationality: Optional[str] = Field(None, description="Candidate's nationality")
-    kyc_status: Optional[str] = Field(None, description="Any identity verification status found (e.g., Verified via Passport, Aadhar mentioned, background check cleared)")
-    inferred_profession: Optional[str] = Field(None, description="Main profession title (e.g., 'Structural Bridge Engineer', 'Full Stack Developer')")
-
-# --- Projects (Universal) ---
-
-class Project(BaseModel):
-    """Works for software projects, research, construction, etc."""
-    title: str
-    description: Optional[str] = None
-    role: Optional[str] = Field(None, description="Your role in the project")
-    dates: Optional[DateRange] = None
-    technologies: List[str] = Field(default_factory=list)
-    url: Optional[str] = Field(None, description="Link to project/demo/repo")
-    
-    # Flexible details
-    additional_details: Dict[str, Any] = Field(
-        default_factory=dict,
-        description="Project-specific fields (cost, client, team_size, etc.)"
-    )
 
 # --- Work Experience (Universal) ---
 
@@ -77,14 +54,16 @@ class WorkExperience(BaseModel):
     technologies: List[str] = Field(default_factory=list, description="Tech/tools/methods used")
     team_size: Optional[str] = Field(None, description="Team size managed (if applicable)")
     
+    # Specific Engineering Details
+    highway_details: Optional[Any] = Field(None, description="Detailed info about highways, lanes, and terrain")
+    tunnel_details: Optional[Any] = Field(None, description="Detailed info about tunnels")
+    bridge_details: Optional[Any] = Field(None, description="Detailed info about bridges")
+
     # Catch-all for industry-specific details
     additional_details: Dict[str, Any] = Field(
         default_factory=dict,
         description="Industry-specific fields (e.g., project_cost, client_name, etc.)"
     )
-
-    # Nested Projects
-    projects: List[Project] = Field(default_factory=list, description="List of projects completed during this tenure")
 
 # --- Education (Universal) ---
 
@@ -97,6 +76,23 @@ class Education(BaseModel):
     location: Optional[str] = None
     honors: List[str] = Field(default_factory=list, description="Dean's list, honors, etc.")
     relevant_coursework: List[str] = Field(default_factory=list)
+
+# --- Projects (Universal) ---
+
+class Project(BaseModel):
+    """Works for software projects, research, construction, etc."""
+    title: str
+    description: Optional[str] = None
+    role: Optional[str] = Field(None, description="Your role in the project")
+    dates: Optional[DateRange] = None
+    technologies: List[str] = Field(default_factory=list)
+    url: Optional[str] = Field(None, description="Link to project/demo/repo")
+    
+    # Flexible details
+    additional_details: Dict[str, Any] = Field(
+        default_factory=dict,
+        description="Project-specific fields (cost, client, team_size, etc.)"
+    )
 
 # --- Certifications ---
 
@@ -207,11 +203,6 @@ class Resume(BaseModel):
     industry: Optional[str] = Field(
         None,
         description="Primary industry/field (e.g., 'Software Engineering', 'Civil Engineering')"
-    )
-
-    highest_education_tier: Optional[str] = Field(
-        None,
-        description="Highest level of education attained (e.g., 'PhD', 'Masters', 'Bachelors')"
     )
     
     seniority_level: Optional[str] = Field(

@@ -1,14 +1,14 @@
 import streamlit as st
 import json
 import os
+import re
 import base64
 import datetime
 from main_pipeline import ResumePipeline
 from config.settings import settings
 from dotenv import load_dotenv
 
-# Load .env from the same directory as this script
-load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
+load_dotenv()
 
 # --- CONFIG & STYLING ---
 st.set_page_config(page_title="Resume Intelligence Portal", page_icon="📄", layout="wide")
@@ -68,24 +68,6 @@ st.markdown("""
         font-size: 0.85rem;
         font-weight: 600;
     }
-    .project-item {
-        margin-left: 1.5rem;
-        border-left: 2px solid #0984E3;
-        padding-left: 1rem;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
-    }
-    .kyc-badge {
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        padding: 4px 8px;
-        border-radius: 4px;
-        background: #E8F8F5;
-        color: #27AE60;
-        border: 1px solid #27AE60;
-        font-weight: 700;
-    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -114,8 +96,7 @@ def load_processed_resume(folder_name):
         "txt": ["clean_text.txt"],
         "blocks": ["semantic_blocks.json"],
         "final": ["final_resume.json"],
-        "original": ["original.pdf"],
-        "log": ["pipeline.log"]
+        "original": ["original.pdf"]
     }
     for key, possible_names in schema.items():
         for filename in possible_names:
@@ -149,32 +130,102 @@ def render_dashboard(data, folder):
         return
 
     sections = final.get("sections", {})
-    metadata = final.get("metadata", {})
     
     # 1. Extract Personal Info
-    personal = sections.get("PERSONAL_INFO", {})
+    personal_section = sections.get("PERSONAL_INFORMATION") or sections.get("PERSONAL_INFO", {})
+    # Handle different nesting versions
+    personal = personal_section.get("personal_details") or personal_section
+    
     if isinstance(personal, list) and personal:
         personal = personal[0]
     elif not isinstance(personal, dict):
         personal = {}
     
-    # 2. Key Data Extraction
-    dob = personal.get("date_of_birth") or "N/A"
-    nation = personal.get("nationality") or "N/A"
-    profession = personal.get("inferred_profession") or "Professional Candidate"
-    kyc = personal.get("kyc_status")
+    # Extract email and contact with new nested paths
+    contact = personal.get("contact_details") or personal.get("contact", {})
+    email = personal.get("email") or contact.get("email") or personal.get("Email") or "N/A"
+    mobile = contact.get("primary_mobile") or contact.get("mobile") or contact.get("Mobile") or "N/A"
+    # 2. Extract and Sanitize Lists
+    # Support both new and old Experience schemas
+    employments = ensure_list(sections.get("PROFESSIONAL_EXPERIENCE", []))
+    if not employments:
+        exp_data = sections.get("EXPERIENCE", {})
+        if isinstance(exp_data, dict) and "employments" in exp_data:
+            employments = ensure_list(exp_data["employments"])
+        else:
+            employments = ensure_list(exp_data)
     
-    total_years = metadata.get("total_experience_years") or "N/A"
-    edu_tier = metadata.get("highest_education_tier") or "N/A"
-    
-    # AI Token Usage
-    usage = final.get("token_usage", {"input": 0, "output": 0, "total": 0})
-    
-    exp_list = ensure_list(sections.get("EXPERIENCE", []))
+    # Support both new and old Education schemas
     edu_list = ensure_list(sections.get("EDUCATION", []))
-    cert_list = ensure_list(sections.get("LEGAL_CERTIFICATION", []))
+    if len(edu_list) == 1 and isinstance(edu_list[0], dict) and "qualifications" in edu_list[0]:
+        edu_list = ensure_list(edu_list[0]["qualifications"])
     
-    # Photo Handling
+    # 3. Dynamic Stats Calculation
+    computed = final.get("computed", {})
+    total_years = computed.get("total_experience_years") or "N/A"
+    
+    raw_employers = []
+    raw_clients = []
+    raw_projects = []
+
+    def fuzzy_normalize(name):
+        if not name: return ""
+        n = str(name).lower().strip()
+        n = re.sub(r'[^a-z0-9\s]', '', n) # Remove punct
+        # Remove common suffixes and noisy words
+        n = re.sub(r'\b(ltd|limited|pvt|pvt ltd|company|inc|corp|co|and|&|solutions|services|consultants)\b', '', n)
+        return " ".join(n.split())
+
+    # Collect from Experience
+    for emp_obj in employments:
+        if not isinstance(emp_obj, dict): continue
+        
+        # Employer
+        e_name = emp_obj.get("company_name") or emp_obj.get("firm") or emp_obj.get("organization")
+        if e_name: raw_employers.append(str(e_name).strip())
+        
+        # Projects & Clients
+        plist = ensure_list(emp_obj.get("projects", []))
+        # Handle old key fallback if needed
+        if not plist: plist = ensure_list(emp_obj.get("individual_project_details", []))
+            
+        for p in plist:
+            if not isinstance(p, dict): continue
+            
+            # Project Name
+            p_name = p.get("project_name") or p.get("name")
+            if p_name: raw_projects.append(str(p_name).strip())
+            
+            # Project Client
+            c_name = p.get("client_name") or p.get("client")
+            if c_name: raw_clients.append(str(c_name).strip())
+
+        # Hybrid case: Check for single project name at employment level if list is empty
+        if not plist:
+            top_p = emp_obj.get("project_name")
+            if top_p: raw_projects.append(str(top_p).strip())
+
+    # Fuzzy Deduplicate
+    def dedupe(items):
+        seen_norm = set()
+        unique = []
+        for item in items:
+            norm = fuzzy_normalize(item)
+            if norm and norm not in seen_norm:
+                unique.append(item)
+                seen_norm.add(norm)
+        return unique
+
+    employers = dedupe(raw_employers)
+    projects = dedupe(raw_projects)
+    clients = dedupe(raw_clients)
+
+    total_companies = len(employers)
+    total_projects = len(projects)
+    total_clients = len(clients)
+    
+    # Image Handling
+    metadata = final.get("metadata", {})
     photo_rel_path = metadata.get("candidate_photo")
     image_col = None
     if photo_rel_path:
@@ -182,153 +233,128 @@ def render_dashboard(data, folder):
         if os.path.exists(photo_abs_path):
             image_col = photo_abs_path
 
-    # --- TOP HEADER CARD ---
-    img_html = ""
-    if image_col:
-        with open(image_col, "rb") as f:
-            b64 = base64.b64encode(f.read()).decode()
-        img_html = f'<img src="data:image/png;base64,{b64}" style="width:140px; height:160px; object-fit:cover; border-radius:12px; border: 2px solid #0984E3;">'
-    else:
-        img_html = '<div style="width:140px; height:160px; background:#f0f2f6; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#adb5bd; border: 2px dashed #ddd;">No Photo</div>'
-
-    kyc_html = f'<span class="kyc-badge">🛡️ {kyc}</span>' if kyc else ''
-    
-    header_html = f"""
-    <div class="candidate-card">
-        <div style="display: flex; flex-direction: row; align-items: flex-start; gap: 2rem;">
-            <div style="flex-shrink: 0;">{img_html}</div>
-            <div style="flex-grow: 1; min-width: 0;">
-                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                    <h1 style="margin:0; font-size: 2rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{personal.get('full_name') or personal.get('name') or 'Candidate Profile'}</h1>
-                    {kyc_html}
-                </div>
-                <h3 style="margin: 0.2rem 0; color: #636E72 !important; font-weight: 400;">{profession}</h3>
-                <p style="color: #636E72; font-size: 0.95rem; margin-top: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <span>📍 {personal.get('location') or 'Global'}</span>
-                    <span>📧 {personal.get('email') or 'N/A'}</span>
-                    <span>📞 {personal.get('phone') or 'N/A'}</span>
-                </p>
-                <hr style="margin: 0.8rem 0; border: 0; border-top: 1px solid #eee;">
-                <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
-                    <div><small style="color:#adb5bd; font-size:0.75rem;">DOB</small><br><span style="font-weight:600;">{dob}</span></div>
-                    <div><small style="color:#adb5bd; font-size:0.75rem;">NATIONALITY</small><br><span style="font-weight:600;">{nation}</span></div>
-                    <div><small style="color:#adb5bd; font-size:0.75rem;">HIGHEST EDU</small><br><span style="font-weight:600;">{edu_tier}</span></div>
-                    <div><small style="color:#adb5bd; font-size:0.75rem;">EXPERIENCE</small><br><span style="font-weight:600;">{total_years} Yrs</span></div>
-                </div>
-                <div style="margin-top: 1rem; padding: 0.5rem; background: #f1f2f6; border-radius: 8px; display: flex; gap: 1.5rem; border: 1px solid #dfe4ea;">
-                    <div style="font-size: 0.8rem;"><span style="color:#636e72;">In:</span> <b style="color:#0984e3;">{usage['input']}</b></div>
-                    <div style="font-size: 0.8rem;"><span style="color:#636e72;">Out:</span> <b style="color:#0984e3;">{usage['output']}</b></div>
-                    <div style="font-size: 0.8rem;"><span style="color:#636e72;">Total Tokens:</span> <b style="color:#0984e3;">{usage['total']}</b></div>
-                    <div style="font-size: 0.8rem; margin-left: auto; color: #b2bec3;">AI Insights ✨</div>
+    # Main Header
+    st.markdown(f"""
+        <div class="candidate-card">
+            <div style="display: flex; align-items: flex-start; gap: 2rem;">
+                {f'<img src="data:image/png;base64,{base64.b64encode(open(image_col, "rb").read()).decode()}" style="width:120px; border-radius:10px; border: 1px solid #ddd;">' if image_col else '<div style="width:120px; height:150px; background:#f0f2f6; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#adb5bd;">Photo</div>'}
+                <div style="flex: 1;">
+                    <h2 style="margin:0;">{personal.get('name') or 'Candidate Profile'}</h2>
+                    <p style="color: #636E72; font-size: 1.1rem; margin-top: 0.5rem;">
+                         📧 {email} | 📞 {mobile}
+                    </p>
+                    <div style="margin-top: 1rem;">
+                        <span class="badge">Total Exp: {total_years} Yrs</span>
+                        <span class="badge">Employers: {total_companies}</span>
+                        <span class="badge">Clients: {total_clients}</span>
+                        <span class="badge">Projects: {total_projects}</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    """.replace('\n', ' ')
+    """, unsafe_allow_html=True)
 
-    st.markdown(header_html, unsafe_allow_html=True)
-
-    # --- MAIN CONTENT GRID ---
+    # Detailed Content
     col1, col2 = st.columns([2, 1])
-
+    
     with col1:
-        st.subheader("� Professional Career & Projects")
-        if not exp_list:
-            st.info("No work history found.")
-        else:
-            for exp in exp_list:
-                with st.container():
-                    st.markdown(f"#### {exp.get('position', 'Role')} @ {exp.get('company', 'Organization')}")
-                    d = exp.get('dates') or {}
-                    st.caption(f"🗓️ {d.get('start', 'N/A')} — {d.get('end', 'Present')} | 📍 {exp.get('location', 'Remote')}")
-                    
-                    # Nested Projects
-                    projects = exp.get("projects", [])
-                    if projects:
-                        for p in projects:
-                            p_dates = p.get('dates') or {}
-                            st.markdown(f"""
-                                <div class="project-item">
-                                    <strong>🔹 Project: {p.get('title', 'System Development')}</strong> ({p_dates.get('start', '')} - {p_dates.get('end', '')})<br>
-                                    <span style="font-size: 0.9rem; color: #444;">{p.get('description') or p.get('role') or 'Contributed to core development and delivery.'}</span>
-                                </div>
-                            """, unsafe_allow_html=True)
-                    else:
-                        # Fallback to description bullet points if no projects nested
-                        desc = exp.get("description", [])
-                        if isinstance(desc, list):
-                            for bullet in desc[:3]:
-                                st.markdown(f"- {bullet}")
-                    st.divider()
+        st.subheader("🛠️ Professional Summary")
+        summary = personal.get("professional_summary") or personal.get("summary")
+        if not summary:
+            designation = personal.get("proposed_position") or personal.get("firm")
+            if designation:
+                summary = f"Professional profile with background in {designation}."
+            else:
+                summary = "Detailed project and experience information available in sections."
+        st.write(summary)
 
-    with col2:
-        st.subheader("🎓 Academic Qualification")
-        for edu in edu_list:
-            st.markdown(f"**{edu.get('degree', 'Degree')}**")
-            st.markdown(f"{edu.get('institution', 'University')}")
-            edu_dates = edu.get('dates') or {}
-            st.caption(f"({edu_dates.get('end', 'N/A')}) | GPA: {edu.get('gpa', 'N/A')}")
-            st.write("")
-        
-        st.subheader("📜 Declarations & Certs")
-        certs = cert_list + sections.get("LEGAL_CERTIFICATION", []) if not isinstance(sections.get("LEGAL_CERTIFICATION"), list) else cert_list
-        if cert_list:
-            for cert in cert_list:
-                st.markdown(f"✅ **{cert.get('name')}**")
-                st.caption(f"Issued by {cert.get('issuer') or 'Authority'} ({cert.get('date_issued', 'N/A')})")
+        st.subheader("🏢 Previous Employers")
+        if employers:
+            for e in employers:
+                st.markdown(f"- **{e}**")
         else:
-            st.write("No certifications found.")
-            
-        st.subheader("⚡ Core Skills")
-        skills = final.get("skills", []) or sections.get("skills", [])
+            st.write("No employer information found.")
+
+        st.subheader("🤝 Associated Clients")
+        if clients:
+            for c in clients:
+                st.markdown(f"- **{c}**")
+        else:
+            st.write("No client information found.")
+
+        st.subheader("🚀 Projects Handled")
+        if projects:
+            for p in projects[:15]: # Top 15 projects
+                st.markdown(f"- {p}")
+            if len(projects) > 15:
+                st.write(f"*... and {len(projects)-15} more projects*")
+        else:
+            st.write("No project details found.")
+    
+    with col2:
+        st.subheader("👤 Personal Details")
+        reg = personal.get("professional_registration_details") or {}
+        ident = personal.get("identity_details") or {}
+        addr = personal.get("addresses") or {}
+        
+        st.markdown(f"""
+        - **DOB**: {personal.get('date_of_birth') or personal.get('dob') or 'N/A'}
+        - **Nationality**: {personal.get('nationality') or 'N/A'}
+        - **Address**: {addr.get('current_address') or personal.get('address', {}).get('current') or 'N/A'}
+        - **Reg No**: {reg.get('registration_number') or 'N/A'}
+        - **Verification**: {reg.get('verification_status') or 'N/A'} ({reg.get('verification_remarks') or 'None'})
+        """)
+
+        st.subheader("🎓 Education")
+        if edu_list:
+            for edu in edu_list:
+                level = edu.get('degree_title') or edu.get('degree') or edu.get('level') or 'Degree'
+                inst = edu.get('university_name') or edu.get('institution_name') or edu.get('university') or edu.get('institution') or 'N/A'
+                year = edu.get('passing_year') or edu.get('dates', {}).get('end', '')
+                st.markdown(f"**{level}**  \n{inst} ({year})")
+        else:
+            st.write("Educational background not found.")
+
+        st.subheader("⚡ Skills & Tools")
+        skills = personal.get("skills") or sections.get("SKILLS") or []
+        if isinstance(skills, str): skills = [s.strip() for s in skills.split(",")]
+        
         if skills:
-            skills_html = "".join([f'<span class="badge">{s}</span>' for s in skills[:15]])
+            skills_html = "".join([f'<span class="badge">{s}</span>' for s in skills])
             st.markdown(skills_html, unsafe_allow_html=True)
         else:
-            st.write("No skill data available.")
+            st.write("No specific skills listed.")
 
 # --- UI LOGIC ---
 
 def main():
     st.title("💼 Resume Intelligence Hub")
     
-    # Initialize session state for current selection and AI settings
-    if 'current_selection' not in st.session_state:
-        st.session_state['current_selection'] = "None"
-    if 'llm_provider' not in st.session_state:
-        st.session_state['llm_provider'] = "Google"
-    if 'llm_model' not in st.session_state:
-        st.session_state['llm_model'] = "gemini-2.5-flash-lite"
+    # Initialize session state
+    if 'current_id' not in st.session_state:
+        st.session_state['current_id'] = "None"
     
     with st.sidebar:
-        st.header("🧠 AI Settings")
-        provider = st.selectbox("LLM Provider", list(settings.LLM_MODELS.keys()), key="llm_provider")
-        model_name = st.selectbox("Model", settings.LLM_MODELS[st.session_state['llm_provider']], key="llm_model")
-        
-        st.divider()
         st.header("📂 Data History")
         history = get_history()
-        options = ["None"] + history
         
-        # Find index of current selection to keep UI in sync
-        try:
-            current_index = options.index(st.session_state['current_selection'])
-        except ValueError:
-            current_index = 0
-            
-        selected_history = st.selectbox("Select Resume", options, index=current_index)
-        
-        # Update session state if dropdown changed manually
-        if selected_history != st.session_state['current_selection']:
-            st.session_state['current_selection'] = selected_history
+        # We drive the selection from session state
+        selected_history = st.selectbox(
+            "Select Resume", 
+            ["None"] + history,
+            index=["None", *history].index(st.session_state['current_id']) if st.session_state['current_id'] in ["None", *history] else 0
+        )
+
+        if selected_history != st.session_state['current_id']:
+            st.session_state['current_id'] = selected_history
             st.rerun()
         
-        if st.button("➕ Process New"):
-            st.session_state['current_selection'] = "None"
+        if st.button("➕ Process New", use_container_width=True):
+            st.session_state['current_id'] = "None"
             st.rerun()
 
-    if st.session_state['current_selection'] == "None":
-        st.write("### 📄 Upload New Resume")
+    if st.session_state['current_id'] == "None":
+        st.write("### � Upload New Resume")
         uploaded_file = st.file_uploader("Upload PDF", type="pdf")
         if uploaded_file and st.button("✨ Run Pipeline"):
             ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -336,34 +362,59 @@ def main():
             temp_path = os.path.join(STORAGE_DIR, "temp_upload.pdf")
             with open(temp_path, "wb") as f: f.write(uploaded_file.getbuffer())
             
-            with st.status(f"🛠️ Analyzing with {st.session_state['llm_model']}...", expanded=True):
-                pipeline = ResumePipeline(
-                    resume_id=resume_id, 
-                    original_filename=uploaded_file.name,
-                    llm_provider=st.session_state['llm_provider'],
-                    llm_model=st.session_state['llm_model']
-                )
-                # Pass st.write as callback for real-time progress
-                final_path = pipeline.run(temp_path, progress_callback=st.write)
-            
-            # Successfully update selection with the NEW renamed folder ID
-            new_id = os.path.basename(os.path.dirname(final_path))
-            st.session_state['current_selection'] = new_id
+            with st.status("🛠️ Analyzing...", expanded=True) as status:
+                pipeline = ResumePipeline(resume_id=resume_id, original_filename=uploaded_file.name)
+                
+                def progress_update(msg, detail=None):
+                    if detail:
+                        status.write(f"**{msg}** ({detail})")
+                    else:
+                        status.write(f"⏳ {msg}")
+                
+                pipeline.run(temp_path, progress_callback=progress_update)
+                status.update(label="✅ Extraction Complete!", state="complete", expanded=False)
+            st.session_state['current_id'] = resume_id
             st.rerun()
     else:
-        folder = st.session_state['current_selection']
+        folder = selected_history
         data = load_processed_resume(folder)
         
-        # # 1. TOP DASHBOARD
-        # render_dashboard(data, folder)
-        
-        # st.divider()
-        
-        # 2. COLUMN / TABBED ARTIFACTS
-        tabs = st.tabs(["Dashboard","💎 Final JSON", "📄 Original PDF", "🧩 Semantic Blocks", "📝 Clean Text", "📄 Structure (MD)", "📜 Pipeline Logs"])
-        
+        # COLUMN / TABBED ARTIFACTS
+        tabs = st.tabs([
+            "📊 Dashboard", 
+            "📄 Final JSON", 
+            "📄 Original PDF", 
+            "🧩 Semantic Blocks", 
+            "📝 Clean Text", 
+            "📄 Structure (MD)"
+        ])
+
+        # Sidebar Metadata
+        with st.sidebar:
+            st.divider()
+            st.markdown("### 🔍 Extraction Metadata")
+            
+            # Correct retrieval from deep nested 'final' JSON
+            final_json = data.get("final", {})
+            usage = final_json.get("usage", {})
+            st.write(f"**Input Tokens**: {usage.get('input_tokens', 0)}")
+            st.write(f"**Output Tokens**: {usage.get('output_tokens', 0)}")
+            st.write(f"**Total Tokens**: {usage.get('total_tokens', 0)}")
+            st.info(f"Last Extracted: {final_json.get('extracted_at', 'N/A')}")
+            
+            # Timelines
+            st.divider()
+            st.markdown("### ⏲️ Pipeline Timelines")
+            timelines = final_json.get("timelines", [])
+            if timelines:
+                for tl in timelines:
+                    st.caption(tl)
+            else:
+                st.write("No timeline data found.")
+
         with tabs[0]:
-            render_dashboard(data, folder)                  
+            render_dashboard(data, folder)
+        
         with tabs[1]:
             st.json(data["final"] or {"error": "No final JSON found"})
             
@@ -384,12 +435,6 @@ def main():
                 st.markdown(data["md"])
             else:
                 st.warning("No markdown structure found.")
-
-        with tabs[6]:
-            if data["log"]:
-                st.text_area("Logs", data["log"], height=600)
-            else:
-                st.info("No logs found for this session.")
 
 if __name__ == "__main__":
     main()

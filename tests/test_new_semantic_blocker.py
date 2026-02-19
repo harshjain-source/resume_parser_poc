@@ -1,14 +1,12 @@
 import os
 import json
 import re
-from config.settings import settings
 
-class SemanticBlocker:
+class NewSemanticBlocker:
     """
-    Stage 3: Semantic Block Creation.
-    Groups cleaned text into logical buckets for LLM processing.
+    Test version of SemanticBlocker with enhanced anchor detection.
     """
-    # Enterprise-Grade Category Anchors
+    
     MAJOR_ANCHORS = {
         "DOCUMENT_METADATA": ["technical proposal", "extraction metadata"],
         "PERSONAL_INFORMATION": ["basic details", "profile", "before ekyc data", "nationality", "date of birth", "pan number", "aadhar number", "passport number", "mobile", "email", "current address", "permanent address", "verification status", "registration date"],
@@ -19,7 +17,6 @@ class SemanticBlocker:
         "ADDITIONAL_INFORMATION": ["membership of professional", "software skills", "technical skills", "languages known", "certifications", "additional information"]
     }
 
-    # These stay inside their parent MAJOR section to prevent fragmentation
     MINOR_ANCHORS = [
         "bridge details", "tunnel details", "highway details", "lane details", 
         "arbitration", "description of duties", "nature of assignment", 
@@ -29,75 +26,64 @@ class SemanticBlocker:
         "designation"
     ]
 
-    def __init__(self, resume_id: str):
-        self.resume_id = resume_id
-        self.base_path = os.path.join(settings.RESUME_DIR, resume_id)
-        self.input_path = os.path.join(self.base_path, "clean_text.json")
-        self.output_json_path = os.path.join(self.base_path, "semantic_blocks.json")
-        self.output_txt_path = os.path.join(self.base_path, "semantic_blocks.txt")
+    def __init__(self, raw_text):
+        self.raw_text = raw_text
 
     def run(self):
-        if not os.path.exists(self.input_path):
-            raise FileNotFoundError(f"Missing input artifact: {self.input_path}")
-            
-        with open(self.input_path, 'r', encoding='utf-8') as f:
-            clean_text = json.load(f)["content"]
-
         sections = {"INTRO_HEADER": []}
         current_cat = "INTRO_HEADER"
         
-        for line in clean_text.splitlines():
+        for line in self.raw_text.splitlines():
             line_clean = line.strip().lower()
             
             if not line_clean:
                 continue
 
-            # Switch sections ONLY on actual Headers (lines starting with ##)
+            # Check for MAJOR Anchor (Category Switch)
+            # ONLY switch if it's a header line (starts with ##)
             if line_clean.startswith("##"):
                 header_text = line_clean.replace("#", "").strip()
                 
-                # Check for MAJOR Anchor (Category Switch)
+                found_major = False
                 for cat, keywords in self.MAJOR_ANCHORS.items():
                     if any(kw == header_text or header_text.startswith(kw) for kw in keywords):
-                        # Ensure it's not actually a MINOR anchor before switching
+                        # Before switching, check if this is actually just a MINOR anchor 
                         is_minor = any(kw in header_text for kw in self.MINOR_ANCHORS)
                         
                         if not is_minor:
                             current_cat = cat
                             if current_cat not in sections: 
                                 sections[current_cat] = []
+                            found_major = True
                             break
             
             sections[current_cat].append(line)
 
-        # Cleanup and finalize blocks
+        # Finalize blocks
         blocks = {k: "\n".join(v).strip() for k, v in sections.items() if v}
+        return blocks
 
-        with open(self.output_json_path, 'w', encoding='utf-8') as f:
-            json.dump(blocks, f, indent=4, ensure_ascii=False)
+def test_on_existing_data():
+    sample_path = r"c:\Users\Dell\Desktop\resume_parser\resume_parser1\processed_resumes\BE.pdf_20260219_123106\clean_text.json"
+    
+    print(f"LOADING: Loading sample: {sample_path}")
+    with open(sample_path, 'r', encoding='utf-8') as f:
+        clean_text = json.load(f)["content"]
 
-        with open(self.output_txt_path, 'w', encoding='utf-8') as f:
-            for cat, content in blocks.items():
-                f.write(f"=== {cat} ===\n{content}\n" + "="*20 + "\n\n")
-            
-        return self.output_json_path
+    blocker = NewSemanticBlocker(clean_text)
+    blocks = blocker.run()
+
+    print("\n" + "="*50)
+    print("RESULTS: NEW SEMANTIC BLOCKING RESULTS")
+    print("="*50)
+    
+    for cat, content in blocks.items():
+        line_count = len(content.splitlines())
+        print(f"CATEGORY: {cat:30} | {line_count:4} lines")
+        # Print first 2 lines of content for preview
+        preview = "\n".join(content.splitlines()[:2])
+        print(f"   Preview: {preview[:100]}...")
+        print("-" * 50)
 
 if __name__ == "__main__":
-    # --- RUNNABLE TEST BLOCK ---
-    TEST_UUID = "test_extraction_debug"
-    print(f"🧩 Creating Semantic Blocks for: {TEST_UUID}...")
-    
-    try:
-        blocker = SemanticBlocker(TEST_UUID)
-        path = blocker.run()
-        print(f"✅ Semantic Blocks Created!")
-        print(f"🔗 File saved: {path}")
-        
-        # Verify block counts
-        with open(path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            print(f"📊 Sections Found: {list(data.keys())}")
-            
-    except Exception as e:
-        print(f"❌ Blocking Failed: {e}")
-
+    test_on_existing_data()
