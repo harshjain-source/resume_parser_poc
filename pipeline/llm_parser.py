@@ -3,6 +3,9 @@ import json
 from typing import Dict, Any, Type
 from pydantic import BaseModel
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
+import httpx
+from langchain_core.messages import AIMessage
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from config.settings import settings
@@ -164,16 +167,72 @@ class LLMParser:
         "RAW_UNMAPPED_TEXT": []
     }
 
-    def __init__(self, api_key: str = None):
-        self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        if not self.api_key:
-            raise ValueError("GOOGLE_API_KEY not found in environment.")
+    class SarvamClient:
+        """Manual implementation for Sarvam AI as it's not natively supported in LangChain."""
+        def __init__(self, api_key: str, model: str):
+            self.api_key = api_key
+            self.model = model
+            self.base_url = f"{settings.SARVAM_BASE_URL}/v1/chat/completions"
+
+        def invoke(self, prompt: str) -> AIMessage:
+            headers = {
+                "api-subscription-key": self.api_key,
+                "Content-Type": "application/json"
+            }
+            payload = {
+                "model": self.model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0
+            }
             
-        self.llm = ChatGoogleGenerativeAI(
-            model=settings.GEMINI_MODEL,
-            temperature=0, 
-            google_api_key=self.api_key
-        )
+            with httpx.Client(timeout=60.0) as client:
+                response = client.post(self.base_url, headers=headers, json=payload)
+                response.raise_for_status()
+                data = response.json()
+                
+                content = data["choices"][0]["message"]["content"]
+                # Mimic LangChain response metadata for token tracking
+                usage = data.get("usage", {})
+                response_metadata = {
+                    "usage_metadata": {
+                        "prompt_token_count": usage.get("prompt_tokens", 0),
+                        "candidates_token_count": usage.get("completion_tokens", 0),
+                        "total_token_count": usage.get("total_tokens", 0)
+                    }
+                }
+                return AIMessage(content=content, response_metadata=response_metadata)
+
+    def __init__(self, provider: str = None, model: str = None):
+        self.provider = provider or settings.DEFAULT_PROVIDER
+        
+        if self.provider == "google":
+            self.api_key = os.getenv("GOOGLE_API_KEY")
+            if not self.api_key:
+                raise ValueError("GOOGLE_API_KEY not found in environment.")
+            self.llm = ChatGoogleGenerativeAI(
+                model=model or settings.GEMINI_MODEL,
+                temperature=0, 
+                google_api_key=self.api_key
+            )
+        elif self.provider == "groq":
+            self.api_key = os.getenv("GROQ_API_KEY")
+            if not self.api_key:
+                raise ValueError("GROQ_API_KEY not found in environment.")
+            self.llm = ChatGroq(
+                model=model or settings.GROQ_MODEL,
+                temperature=0,
+                groq_api_key=self.api_key
+            )
+        elif self.provider == "sarvam":
+            self.api_key = os.getenv("SARVAM_API_KEY")
+            if not self.api_key:
+                raise ValueError("SARVAM_API_KEY not found in environment.")
+            self.llm = self.SarvamClient(
+                api_key=self.api_key,
+                model=model or settings.SARVAM_MODEL
+            )
+        else:
+            raise ValueError(f"Unsupported provider: {self.provider}")
 
     # def parse_bucket(self, bucket_name: str, text: str):
     #     """Converts raw text into JSON using a one-shot format template with zero-deletion rules."""

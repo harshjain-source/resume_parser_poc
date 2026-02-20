@@ -353,8 +353,24 @@ def main():
             st.session_state['current_id'] = "None"
             st.rerun()
 
+        st.divider()
+        st.header("⚙️ Model Config")
+        provider = st.selectbox("Provider", ["google", "groq", "sarvam"], index=0 if settings.DEFAULT_PROVIDER == "google" else 1 if settings.DEFAULT_PROVIDER == "groq" else 2)
+        
+        if provider == "google":
+            model_options = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro", "gemini-2.5-flash-lite"]
+            default_model = settings.GEMINI_MODEL
+        elif provider == "groq":
+            model_options = ["llama-3.1-8b-instant", "llama-3.3-70b-versatile", "mixtral-8x7b-32768"]
+            default_model = settings.GROQ_MODEL
+        else:
+            model_options = ["sarvam-m"]
+            default_model = settings.SARVAM_MODEL
+            
+        model = st.selectbox("Model", model_options, index=model_options.index(default_model) if default_model in model_options else 0)
+
     if st.session_state['current_id'] == "None":
-        st.write("### � Upload New Resume")
+        st.write("### 📄 Upload New Resume")
         uploaded_file = st.file_uploader("Upload PDF", type="pdf")
         if uploaded_file and st.button("✨ Run Pipeline"):
             ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -362,8 +378,13 @@ def main():
             temp_path = os.path.join(STORAGE_DIR, "temp_upload.pdf")
             with open(temp_path, "wb") as f: f.write(uploaded_file.getbuffer())
             
-            with st.status("🛠️ Analyzing...", expanded=True) as status:
-                pipeline = ResumePipeline(resume_id=resume_id, original_filename=uploaded_file.name)
+            with st.status("🛠️ Analyzing using " + model + "...", expanded=True) as status:
+                pipeline = ResumePipeline(
+                    resume_id=resume_id, 
+                    original_filename=uploaded_file.name,
+                    provider=provider,
+                    model=model
+                )
                 
                 def progress_update(msg, detail=None):
                     if detail:
@@ -395,7 +416,7 @@ def main():
             st.markdown("### 🔍 Extraction Metadata")
             
             # Correct retrieval from deep nested 'final' JSON
-            final_json = data.get("final", {})
+            final_json = data.get("final") or {}
             usage = final_json.get("usage", {})
             st.write(f"**Input Tokens**: {usage.get('input_tokens', 0)}")
             st.write(f"**Output Tokens**: {usage.get('output_tokens', 0)}")

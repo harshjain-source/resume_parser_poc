@@ -1,0 +1,19 @@
+{
+    "resume_id": "GE.pdf_20260220_114122",
+    "original_filename": "GE.pdf",
+    "processed_at": "2026-02-20T11:41:23.905451",
+    "timelines": [
+        "Stage 0: Preparation: (0.81s - 0.85s)",
+        "Stage 1: Extraction: (0.85s - 1.06s)",
+        "Stage 1.5: Photo Extraction: (1.06s - 1.19s)",
+        "Stage 2: Cleaning: (1.19s - 1.34s)",
+        "Stage 3: Blocking: (1.34s - 1.38s)",
+        "Stage 4: Validation: (1.39s - 1.41s)",
+        "Stage 5: LLM Synthesis: (1.41s - 46.74s)"
+    ],
+    "usage": {
+        "input_tokens": 16974,
+        "output_tokens": 5838,
+        "total_tokens": 22812
+    }
+}

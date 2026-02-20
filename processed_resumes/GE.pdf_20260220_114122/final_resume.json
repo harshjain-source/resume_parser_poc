@@ -1,0 +1,576 @@
+{
+    "resume_id": "GE.pdf_20260220_114122",
+    "extracted_at": "2026-02-20T11:41:24.474235",
+    "usage": {
+        "input_tokens": 16974,
+        "output_tokens": 5838,
+        "total_tokens": 22812
+    },
+    "sections": {
+        "DOCUMENT_METADATA": {
+            "source_file_name": null,
+            "extraction_timestamp": null,
+            "total_pages": null,
+            "note": "NO PROJECTS SHOULD BE EXTRACTED HERE",
+            "professional_experience": [
+                {
+                    "projects": [
+                        {
+                            "project_name": "Construction of 4 lane expressway for connectivity to Vadhavan port",
+                            "project_details": {
+                                "road_type": "Expressway",
+                                "lane_details": {
+                                    "initial_lanes": 4,
+                                    "expandable_lanes": 8
+                                },
+                                "road_numbers": {
+                                    "National_Highway_No": "NH 48",
+                                    "State_Highway_No": null
+                                },
+                                "location": "Maharashtra",
+                                "design_length": "32.180Km",
+                                "construction_mode": "EPC Mode"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "PROPOSED_ASSIGNMENT_DETAILS": {
+            "proposed_position": "Senior Geotechnical Expert",
+            "firm_name": "Rodic Consultants Pvt. Ltd.",
+            "profession": "Civil Engineering",
+            "years_with_firm": "Available for this assignment",
+            "proposed_project_title": null,
+            "proposed_project_location": null,
+            "other_assignment_fields": []
+        },
+        "PERSONAL_INFORMATION": {
+            "name": "Pramod Kumar Jain",
+            "date_of_birth": "10/04/1964",
+            "nationality": "Indian",
+            "contact_details": {
+                "primary_mobile": "9868833358",
+                "alternate_mobile": "9868833358",
+                "landline": "9868833358",
+                "email": "pkjain246@gmail.com"
+            },
+            "identity_details": {
+                "pan_number": "ADJPJ9708L",
+                "aadhar_number": null,
+                "passport_number": "S2421014"
+            },
+            "addresses": {
+                "current_address": "121, 3rd Floor, Shreshtha Vihar, Anand Vihar",
+                "permanent_address": "121, 3rd Floor, Shreshtha Vihar, Anand Vihar"
+            },
+            "professional_registration_details": {
+                "registration_number": null,
+                "registration_date": "22/05/2025",
+                "registration_validity": null,
+                "verification_status": "Active",
+                "verification_remarks": "Verification Under Process"
+            },
+            "other_personal_fields": []
+        },
+        "LEGAL_DECLARATIONS": {
+            "candidate_declaration": "I, the undersigned, (Pramod Kumar Jain C/o Rodic Consultants Pvt. Ltd., 121, 3rd Floor ,Shreshtha Vihar , ,Anand",
+            "firm_declaration": "The undersigned on behalf of (Rodic Consultants Pvt. Ltd.) certify that Shri Pramod Kumar Jain to the best of our knowledge has neither been debarred by National Highway Authority of India (NHAI) or any other Central/State Government organization nor left his assignment with any other consulting firm engaged by the Employer /Contracting firm (firm to be supervised now) for the ongoing projects. We understand that if the information about leaving the past assignment is known to the Employer, Employer would be at liberty to remove the personnel from the present assignment and debar him for an appropriate period to be decided by the Employer.",
+            "signature_date": "28/01/2026",
+            "other_legal_text": "We understand that if the information about leaving the past assignment is known to the Employer, Employer would be at liberty to remove the personnel from the present assignment and debar him for an appropriate period to be decided by the Employer."
+        },
+        "PROFESSIONAL_EXPERIENCE": [
+            {
+                "company_name": "Rodic Consultants Pvt Ltd",
+                "company_location": null,
+                "employment_start_date": "12/05/2025",
+                "employment_end_date": null,
+                "designation": "Technical Officer",
+                "employment_type": null,
+                "mode_of_execution": null,
+                "employment_notes": null,
+                "projects": [
+                    {
+                        "project_name": "Design and Construction of 4 lane (expandable to 8 lane) expressway for the connectivity to proposed Vadhavan port",
+                        "project_location": "Maharashtra",
+                        "client_name": null,
+                        "project_type": null,
+                        "project_category": null,
+                        "project_cost": {
+                            "value": null,
+                            "currency": null,
+                            "unit": null
+                        },
+                        "funding_type": null,
+                        "project_duration": {
+                            "start_date": null,
+                            "end_date": null,
+                            "duration_text": null
+                        },
+                        "role_in_project": null,
+                        "scope_of_work": null,
+                        "road_numbers": {
+                            "national_highway_no": "NH 48",
+                            "state_highway_no": null,
+                            "mdr_no": null,
+                            "odr_no": null
+                        },
+                        "detailed_description": null,
+                        "highway_details": {
+                            "lane_entries": [
+                                {
+                                    "lane_type": "4 Lane",
+                                    "length_km": 32.18,
+                                    "surface_type": null,
+                                    "terrain_type": null
+                                }
+                            ],
+                            "arbitration_details": null,
+                            "financial_closure": null,
+                            "eia_infrastructure": null,
+                            "raw_highway_text": null
+                        },
+                        "bridge_details": {
+                            "bridge_entries": [
+                                {
+                                    "bridge_type": null,
+                                    "longest_span_m": null,
+                                    "total_length_m": null,
+                                    "foundation_type": null,
+                                    "cost": null,
+                                    "technology": null
+                                }
+                            ],
+                            "bridge_length_ranges": [],
+                            "max_individual_span": null,
+                            "total_bridge_length": null,
+                            "raw_bridge_section_text": null
+                        },
+                        "tunnel_details": {
+                            "tunnel_entries": [
+                                {
+                                    "length_m": null,
+                                    "type": null,
+                                    "technology_used": null,
+                                    "geology_type": null
+                                }
+                            ],
+                            "total_length": null,
+                            "maximum_individual_length": null,
+                            "evaluation_details": {
+                                "slope_stability": null,
+                                "hydrological_studies": null,
+                                "software_used": null
+                            },
+                            "raw_tunnel_section_text": null
+                        },
+                        "other_project_attributes": [],
+                        "raw_project_text": null
+                    }
+                ]
+            }
+        ],
+        "EDUCATION": [
+            {
+                "degree_title": "BE/B.Tech /B.Sc. (Engineering)/ AMIE",
+                "education_level": "Graduate/Degree",
+                "specialization": "CIVIL Engineering or equivalent",
+                "institution_name": "University of Delhi",
+                "university_name": "University of Delhi",
+                "enrollment_number": "1638",
+                "roll_number": null,
+                "gpa_or_percentage": null,
+                "passing_year": "1986",
+                "start_year": "1986",
+                "education_notes": null,
+                "raw_text_block": null
+            },
+            {
+                "degree_title": "M.E. M. Tech.",
+                "education_level": "Post Graduate",
+                "specialization": "Computer Science",
+                "institution_name": "Indian Institute of Technology",
+                "university_name": "Indian Institute of Technology (IIT),Delhi",
+                "enrollment_number": null,
+                "roll_number": "85MAC007",
+                "gpa_or_percentage": null,
+                "passing_year": "1987",
+                "start_year": null,
+                "education_notes": null,
+                "raw_text_block": null
+            },
+            {
+                "degree_title": "Certificate Course",
+                "education_level": "Certificate",
+                "specialization": "Management",
+                "institution_name": "Institutions of Engineers",
+                "university_name": null,
+                "enrollment_number": null,
+                "roll_number": null,
+                "gpa_or_percentage": null,
+                "passing_year": "2005",
+                "start_year": "2005",
+                "education_notes": "Training of Indian Railway Officials With M/s. Ramboll in Denmark & Sweden in Connection with Design, Fabrication, Erection of Composite truss for Bridge Across river Brahmaputra",
+                "raw_text_block": null
+            }
+        ],
+        "ADDITIONAL_INFORMATION": {
+            "professional_memberships": [],
+            "certifications": [],
+            "software_skills": [],
+            "technical_skills": [],
+            "languages_known": [],
+            "other_sections": [],
+            "professional_experience": [
+                {
+                    "project_name": "Design and Construction of Railway Project under Northen Railway Construction, Project: New line between Jammu and Udhampur.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "JAMMU and KASHMIR",
+                    "employer_name": "Northern Railway and East Central Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Indian Railway",
+                    "client_address": "Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "01/06/1990",
+                    "completion_date": "31/07/1991",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Assistant Executive Engineer",
+                    "description_of_duties": "Responsible for Design and construction of Tunnel and bridges, overall, in-charge for management/Design, Supervision of the works contract, co-coordinating activities for project implementation involving resources planning and mobilization, works scheduling and work program, addressing design issues at site, approval of working drawings, checking of alignment and checking out layout of structures, etc.",
+                    "nature_of_assignment": "Project Preparation and Design",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 2000,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Twin",
+                        "cost": 0,
+                        "technology": "NATM"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of Railway Project under Northen Railway Construction, Project: New line between Jammu and Udhampur.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "JAMMU and KASHMIR",
+                    "employer_name": "Northern Railway and East Central Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Indian Railway",
+                    "client_address": "Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "01/06/1990",
+                    "completion_date": "31/07/1991",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Assistant Executive Engineer",
+                    "description_of_duties": "Responsible for Design and construction of Tunnel and bridges, overall, in-charge for management/Design, Supervision of the works contract, co-coordinating activities for project implementation involving resources planning and mobilization, works scheduling and work program, addressing design issues at site, approval of working drawings, checking of alignment and checking out layout of structures, etc.",
+                    "nature_of_assignment": "Supervision(EPC)",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 1600,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Twin",
+                        "cost": 0,
+                        "technology": "NATM"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of Railway Project at Haridwar in Uttarakhand.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "UTTARAKHAND",
+                    "employer_name": "Northern Railway and East Central Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Indian Railway",
+                    "client_address": "Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "01/07/1991",
+                    "completion_date": "31/01/1994",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Executive Engineer",
+                    "description_of_duties": "As a Sr Engineer, responsible for Design and construction of Tunnel and bridges, overall, in-charge for management/Design, Supervision of the works contract, co-coordinating activities for project implementation involving resources planning and mobilization, works scheduling and work program, addressing design issues at site, approval of working drawings, checking of alignment and checking out layout of structures, etc.",
+                    "nature_of_assignment": "Supervision(EPC)",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 1600,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Twin",
+                        "cost": 0,
+                        "technology": "NATM"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of Railway Doubling 150 Km Project, and other new line and Gauge conversion projects.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "DELHI",
+                    "employer_name": "Northern Railway and East Central Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Indian Railway",
+                    "client_address": "Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "01/01/1994",
+                    "completion_date": "31/10/1996",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Superintending Engineer",
+                    "description_of_duties": "As Deputy Chief Engineer, responsible for design Review, Standard Tests on quarry materials (aggregate, cement and sand), design and supervision of quality control works of different grades of concrete for the substructure and superstructure works of Railway Bridge, etc.",
+                    "nature_of_assignment": "Project Preparation and Design",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": null,
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of 200 Km new line and 400 Km Gause conversion 200 Km doubling along Ganga bridge at Garh in UP and Yamuna Bridge at Delh.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "DELHI",
+                    "employer_name": "Northern Railway and East Central Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Indian Railway",
+                    "client_address": "Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "01/10/1996",
+                    "completion_date": "31/10/2003",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Superintending Engineer",
+                    "description_of_duties": "As a Deputy Chief Engineer, responsible for design Review, Standard Tests on quarry materials (aggregate, cement and sand), design and supervision of quality control works of different grades of concrete for the substructure and superstructure works of Railway Bridge, etc.",
+                    "nature_of_assignment": "Project Preparation and Design",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": null,
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of 700 Km new line and 350 Km Gause conversion along with Ganga bridge at Digha and Sone Railway Bridge in Bihar.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "BIHAR",
+                    "employer_name": "Northern Railway and East Central Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Indian Railway",
+                    "client_address": "Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "01/10/2003",
+                    "completion_date": "03/03/2006",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Superintending Engineer",
+                    "description_of_duties": "As a Deputy Chief Engineer, responsible for design Review, Standard Tests on quarry materials (aggregate, cement and sand), design and supervision of quality control works of different grades of concrete for the substructure and superstructure works of Railway Bridge, etc.",
+                    "nature_of_assignment": "Project Preparation and Design",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": null,
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of Katra-Banihal section of the USBRL (Udhampur-Srinagar-Baramulla Rail Link) project, including the world's highest Chenab Bridge and the Anji Khad Bridge and large no of tunnels. Length of project: 70 Km.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "JAMMU and KASHMIR",
+                    "employer_name": "Konkan Railway Corporation Ltd",
+                    "employer_address": "Belapur Bhavan Plot No 6 Sector 11 CBD Belapur",
+                    "client": "Konkan Railway Corporation Ltd.",
+                    "client_address": "Belapur Bhavan Plot No 6 Sector 11 CBD Belapur",
+                    "client_contact_details": "912227572420, general@krcl.co.in",
+                    "start_date": "03/03/2006",
+                    "completion_date": "01/03/2011",
+                    "project_cost": "7,000.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Chief Engineer",
+                    "description_of_duties": "Responsible for design Review, Standard Tests on quarry materials (aggregate, cement and sand), design and supervision of quality control works of different grades of concrete for the substructure and superstructure works of Railway Bridge, etc.",
+                    "nature_of_assignment": "Project Preparation and Design",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 11000,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Twin",
+                        "cost": 0,
+                        "technology": "NATM"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of Katra-Banihal section of the USBRL (Udhampur Srinagar Baramulla Rail Link) project, including the world highest Chenab Bridge and the Anji Khad Bridge and large no of tunnels. Length of project: 70 Km.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "JAMMU and KASHMIR",
+                    "employer_name": "Konkan Railway Corporation Ltd",
+                    "employer_address": "Belapur Bhavan Plot No 6 Sector 11 CBD Belapur",
+                    "client": "Konkan Railway Corporation Ltd.",
+                    "client_address": "Belapur Bhavan Plot No 6 Sector 11 CBD Belapur",
+                    "client_contact_details": "912227572420, general@krcl.co.in",
+                    "start_date": "03/03/2006",
+                    "completion_date": "01/03/2011",
+                    "project_cost": "7,000.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Chief Engineer",
+                    "description_of_duties": "As a Chief Engineer, responsible for design Review, Standard Tests on quarry materials (aggregate, cement and sand), design and supervision of quality control works of different grades of concrete for the substructure and superstructure works of Railway Bridge, etc.",
+                    "nature_of_assignment": "Supervision(EPC)",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 28000,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Twin",
+                        "cost": 0,
+                        "technology": "NATM"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "DPR and Construction of Ahmedabad-Mumbai High-Speed Rail Project (350 km/h) and other high speed Rail projects.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "MAHARASHTRA",
+                    "employer_name": "Rail Vikas Nigam Limited",
+                    "employer_address": "Plot No 25 First Floor August Kranti Bhawan Africa Ave Bhikaji Cama Place Rama Krishna Puram New Delhi Delhi 110066",
+                    "client": "RVNL",
+                    "client_address": "Plot No 25 First Floor August Kranti Bhawan Africa Ave Bhikaji Cama Place Rama Krishna Puram New Delhi Delhi 110066",
+                    "client_contact_details": "01126738299, info@rvnl.org",
+                    "start_date": "12/11/2013",
+                    "completion_date": "26/04/2016",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Chief Engineer",
+                    "description_of_duties": "As a Group GM, Design, responsible for",
+                    "nature_of_assignment": "DPR",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 28000,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Twin",
+                        "cost": 0,
+                        "technology": "NATM"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "DPR and Construction of Ahmedabad-Mumbai High-Speed Rail Project (350 km/h) and other high speed Rail projects.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "MAHARASHTRA",
+                    "employer_name": "Rail Vikas Nigam Limited",
+                    "employer_address": "Plot No 25 First Floor August Kranti Bhawan Africa Ave Bhikaji Cama Place Rama Krishna Puram New Delhi Delhi 110066",
+                    "client": "RVNL",
+                    "client_address": "Plot No 25 First Floor August Kranti Bhawan Africa Ave Bhikaji Cama Place Rama Krishna Puram New Delhi Delhi 110066",
+                    "client_contact_details": "01126738299, info@rvnl.org",
+                    "start_date": "12/11/2013",
+                    "completion_date": "26/04/2016",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Chief Engineer",
+                    "description_of_duties": "As a Group GM, responsible for design and construction of Tunnels works.",
+                    "nature_of_assignment": "Supervision(EPC)",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 12800,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Twin",
+                        "cost": 0,
+                        "technology": "NATM"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of Railway Project at Lumding Division in the state of Assam.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "ASSAM",
+                    "employer_name": "Northeast Frontier Railway Indian Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Northeast Frontier Railway Indian Railway",
+                    "client_address": "Northeast Frontier Railway Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "27/04/2016",
+                    "completion_date": "07/05/2018",
+                    "project_cost": "0.00 RS (Cr.)",
+                    "epc_or_ppp": "EPC",
+                    "designation": "Chief Engineer",
+                    "description_of_duties": "As a Divisional Railway Manager, responsible for review and finalization of Final Location Surveys, DPR, Construction, Cost Estimates etc including Geological, Geophysical & Geo Technical investigations, planning & design of tunnel, construction work, quality check.",
+                    "nature_of_assignment": "Project Preparation and Design",
+                    "road_numbers": {
+                        "national_highway_no": null,
+                        "state_highway_no": null
+                    },
+                    "tunnel_details": {
+                        "length": 12800,
+                        "cross_section_area": 0,
+                        "tunnel_type": "Railways",
+                        "tube_type": "Single",
+                        "cost": 0,
+                        "technology": "N/A"
+                    },
+                    "bridge_details": null
+                },
+                {
+                    "project_name": "Design and Construction of Railway Project at Lumding Division in the state of Assam.",
+                    "project_status": "Completed",
+                    "country": "India",
+                    "state": "ASSAM",
+                    "employer_name": "Northeast Frontier Railway Indian Railway",
+                    "employer_address": "Northern Railway and East Central Railway",
+                    "client": "Northeast Frontier Railway Indian Railway",
+                    "client_address": "Northeast Frontier Railway Indian Railway",
+                    "client_contact_details": "1800111321, me@rb.railnet.gov.in",
+                    "start_date": "27/04/2016",
+                    "completion_date": "07/05/2018"
+                }
+            ]
+        }
+    },
+    "computed": {
+        "total_experience_years": "0.8"
+    },
+    "metadata": {
+        "candidate_photo": "photo\\candidate_photo.jpeg"
+    },
+    "timelines": [
+        "Stage 0: Preparation: (0.81s - 0.85s)",
+        "Stage 1: Extraction: (0.85s - 1.06s)",
+        "Stage 1.5: Photo Extraction: (1.06s - 1.19s)",
+        "Stage 2: Cleaning: (1.19s - 1.34s)",
+        "Stage 3: Blocking: (1.34s - 1.38s)",
+        "Stage 4: Validation: (1.39s - 1.41s)",
+        "Stage 5: LLM Synthesis: (1.41s - 46.74s)"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "resume_id": "BE.pdf_20260220_165512",
+    "original_filename": "BE.pdf",
+    "processed_at": "2026-02-20T16:55:15.262853",
+    "timelines": [
+        "Stage 0: Preparation: (1.80s - 1.80s)",
+        "Stage 1: Extraction: (1.80s - 2.15s)",
+        "Stage 1.5: Photo Extraction: (2.15s - 2.62s)",
+        "Stage 2: Cleaning: (2.62s - 2.69s)",
+        "Stage 3: Blocking: (2.69s - 2.74s)",
+        "Stage 4: Validation: (2.75s - 2.78s)",
+        "Stage 5: LLM Synthesis: (2.78s - 148.35s)"
+    ],
+    "usage": {
+        "input_tokens": 20045,
+        "output_tokens": 34543,
+        "total_tokens": 54588
+    }
+}

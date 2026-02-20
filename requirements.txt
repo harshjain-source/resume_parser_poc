@@ -15,6 +15,7 @@ pymupdf
 langchain
 langchain-core
 langchain-google-genai
+langchain-groq
 
 # UI
 streamlit
@@ -28,4 +29,4 @@ email-validator
 
 # Utils
 numpy
-python-dotenv
+python-dateutil
