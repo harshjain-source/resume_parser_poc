@@ -20,14 +20,6 @@ class LLMParser:
     Converts semantic blocks into high-accuracy JSON using One-Shot templates.
     """
     
-    # # Map semantic buckets to Pydantic models for strict extraction
-    # SCHEMA_MAP: Dict[str, Type[BaseModel]] = {
-    #     "PERSONAL_INFO": ContactInfo,
-    #     "EDUCATION": Education, # The parser will handle list vs single object instructions
-    #     "EXPERIENCE": WorkExperience,
-    #     "LEGAL_CERTIFICATION": Certification
-    # }
-
     # Master Template (High-Fidelity Enterprise Schema)
     MASTER_TEMPLATES = {
         "DOCUMENT_METADATA": {
@@ -60,18 +52,18 @@ class LLMParser:
                 "registration_date": None,
                 "registration_validity": None,
                 "verification_status": None,
-                "verification_remarks": None
-            },
-            "other_personal_fields": []
+                "verification_remarks": None,
+                "raw_registration_text": None
+            }
         },
-        "PROPOSED_ASSIGNMENT_DETAILS": {
+        "proposed_assignment_details": {
             "proposed_position": None,
             "firm_name": None,
             "profession": None,
             "years_with_firm": None,
             "proposed_project_title": None,
             "proposed_project_location": None,
-            "other_assignment_fields": []
+            "raw_assignment_text": None
         },
         "EDUCATION": [
             {
@@ -112,17 +104,17 @@ class LLMParser:
                         "role_in_project": None,
                         "scope_of_work": None,
                         "road_numbers": {
-                             "national_highway_no": None,
-                             "state_highway_no": None,
-                             "mdr_no": None,
-                             "odr_no": None
+                             "nh": None,
+                             "sh": None,
+                             "mdr": None,
+                             "odr": None
                         },
                         "detailed_description": None,
                         "highway_details": {
                             "lane_entries": [
-                                {"lane_type": "2 Lane", "length_km": None, "surface_type": None, "terrain_type": None},
-                                {"lane_type": "4 Lane", "length_km": None, "surface_type": None, "terrain_type": None},
-                                {"lane_type": "6 Lane & Above", "length_km": None, "surface_type": None, "terrain_type": None}
+                                {"lane_type": None, "length_km": None, "surface_type": None, "terrain_type": None},
+                                {"lane_type": None, "length_km": None, "surface_type": None, "terrain_type": None},
+                                {"lane_type": None, "length_km": None, "surface_type": None, "terrain_type": None}
                             ],
                             "arbitration_details": None, 
                             "financial_closure": None,
@@ -133,14 +125,29 @@ class LLMParser:
                             "bridge_entries": [
                                 {"bridge_type": None, "longest_span_m": None, "total_length_m": None, "foundation_type": None, "cost": None, "technology": None}
                             ],
-                            "bridge_length_ranges": [], 
+                            "bridge_length_ranges": {
+                                "6m_60m": None,
+                                "60m_200m": None,
+                                "200m_500m": None,
+                                "500m_1000m": None,
+                                "greater_than_1000m": None
+                            },     
                             "max_individual_span": None,
                             "total_bridge_length": None,
+                            "No. Of Major Bridges with Pile/Well foundation": None,
+                            "No. Of Bridges where Rehabilitation and repair work was done": None,
                             "raw_bridge_section_text": None
                         },
                         "tunnel_details": {
-                            "tunnel_entries": [{"length_m": None, "type": None, "technology_used": None, "geology_type": None}],
-                            "total_length": None, "maximum_individual_length": None,
+                            "tunnel_entries": [{"length_m": None, "type": None, "tube_type": None, "cost": None, "technology_used": None, "geology_type": None}],
+                            "tunnel_length_ranges": {
+                                "upto_200m": None,
+                                "200m_500m": None,
+                                "500m_1000m": None,
+                                "greater_than_1000m": None
+                            },
+                            "total_length": None,
+                            "maximum_individual_length": None,
                             "evaluation_details": {"slope_stability": None, "hydrological_studies": None, "software_used": None},
                             "raw_tunnel_section_text": None
                         },
@@ -166,6 +173,7 @@ class LLMParser:
         },
         "RAW_UNMAPPED_TEXT": []
     }
+
 
     class SarvamClient:
         """Manual implementation for Sarvam AI as it's not natively supported in LangChain."""
